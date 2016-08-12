@@ -24,12 +24,13 @@ GNU General Public License for more details.
 
 
 For the Greek users:
-An thelete na doulepsei swsta to programma na grafete orthografhmena!
-(opws edw). Gia paradeigma ta kuria onomata me hta sto telos.
-LATHOS: Orestis. --> SWSTO: Oresths. To wmega to grafoume me "w",
-tous difthogkous kanonika, dld: mp - oxi b, nt - oxi d, gk - oxi g.
-Ta dipla fwnhenta kanonika. ei, oi, ai, kai oxi 'i' kai 'e'.
-ALLIWS DEN THA VGOYN OLOI OI DYNATOI SYNDYASMOI KWDIKWN!
+Αν θέλετε να δουλέψει σωστά να γράφετε ορθογραφημένα - δηλαδή:
+Τα κύρια ονόματα γράφονται με ήτα και όχι γιώτα. Για παράδειγμα:
+ΛΑΘΟΣ: Orestis. ΣΩΣΤΟ: Oresths. Επίσης, το ωμέγα συμβολίζεται με w,
+όχι με 'ο'. Οι δίφθογκοι γράφονται κανονικά: mp - όχι b, nt - όχι d,
+gk - όχι g. Τα διπλά φωνήεντα επίσης: ei, oi, ai, και όχι 'i' kai 'e'.
+Και πάει λέγοντας. ΑΝ ΔΕΝ ΤΟ ΚΑΝΕΤΕ ΑΥΤΟ ΔΕΝ ΘΑ ΣΑΣ ΔΩΣΕΙ ΟΛΟΥΣ 
+ΤΟΥΣ ΠΙΘΑΝΟΥΣ ΚΩΔΙΚΟΥΣ!
 
 
 
