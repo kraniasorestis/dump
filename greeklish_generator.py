@@ -107,7 +107,8 @@ leet_dict = {
 	'ay':'ef',
 	'ey':'ef',
 	'au':'af',
-	'eu':'ef'
+	'eu':'ef',
+	'ch':'x'
 }
 
 
