@@ -1,7 +1,7 @@
-#!/bin/pyhton
+#!/bin/python
 
 import time
-
+from src import Nicks
 intro = '''
 
 ########################   GREEKLISH WORDLIST GENERATOR ############################
@@ -20,7 +20,7 @@ GNU General Public License for more details.
 
  see <http://www.gnu.org/licenses/>
 
-* Creator: Orestis Kranias  
+* Creator: Orestis Kranias
 * kraniasorestis@protonmail.com
 * www.github.com/kraniasorestis
 * Copyright (C) 2016
@@ -35,8 +35,8 @@ Ta dipla fwnhenta kanonika. ei, oi, ai, kai oxi 'i' kai 'e'.
 ALLIWS DEN THA VGOYN OLOI OI DYNATOI SYNDYASMOI KWDIKWN!
 
 
-DISCLAIMER: If you do anything illegal with this program, you could 
-end up in JAIL! I have no responsibility over how this will be used! 
+DISCLAIMER: If you do anything illegal with this program, you could
+end up in JAIL! I have no responsibility over how this will be used!
 It's developed for penetration testers and security researchers!!
 Not for wardriving!!
 
@@ -52,17 +52,17 @@ info = '''
 
 About this project
 
-This is a personalised greeklish dictionary creator, desingned for penetration 
-testing within Greece - but it can obviously be altered for use in other languages. 
+This is a personalised greeklish dictionary creator, desingned for penetration
+testing within Greece - but it can obviously be altered for use in other languages.
 It's being developed to fill a gap in dictionary-attacks in Greece
-which fail too often precisely because there is no good greeklish 
+which fail too often precisely because there is no good greeklish
 dictionary similar to rockyou and because tools like cupp do not
 help that much when it comes to Greek.
 
 The premise: if you provide this program with info on your target
-it will generate a wordlist (implementing a 'cupp-like thinking') 
-taylored specifically for your target, with greater chances of success 
-than a usual english dictionary, which is next to useless in Greece. 
+it will generate a wordlist (implementing a 'cupp-like thinking')
+taylored specifically for your target, with greater chances of success
+than a usual english dictionary, which is next to useless in Greece.
 
 I didn't have the time to do any type checking to the input you give, so,
 if you type words where you should be typing telephone numbers etc,
@@ -78,7 +78,7 @@ Good luck!
 ######################## GLOBAL CONSTANTS WE'LL NEED ##############################
 
 
-minchar = 8    # min and max password characters - change this as you like 
+minchar = 8    # min and max password characters - change this as you like
 maxchar = 18
 
 
@@ -128,7 +128,7 @@ aris = ['skouliki', 'salonika', 'xarilaou', 'aris', 'arianos' ]
 
 
 def names():        # populates the nameslist
-	global surname 
+	global surname
 	global firstname
 
 	while True:
@@ -137,7 +137,7 @@ def names():        # populates the nameslist
 			print info
 		elif x == "end":
 			pass
-		else: 
+		else:
 			surname = x
 			nameslist.append(surname)
 
@@ -161,44 +161,21 @@ def names():        # populates the nameslist
 			break
 		elif name == "help":
 			print info
-		else: 
+		else:
 			nameslist.append(name)
 
 
 def list_nicks(l): # returns a list of names appended with nicknames
 	nicks = []
 	for i in l:
-		nicks = nicks + nickname(i)
-	return nicks
-	
-def nickname(n):   # use a nickname function for each name based on gender
-	nicks = []
-	if n[-2:] == 'hs' or n[-2:] == 'os' or n[-2:] == 'as':
-		nicks = male_nicks(n)
-	else:
-		nicks = fem_nicks(n)
+		nicks = nicks + Nicks.nickname(i)
 	return nicks
 
 
-def fem_nicks(s):  # create female nicknames
-	nicks = []
-	if s[-2:] == 'ia':
-		nicks.append(s[:-2]+'oula')
-		nicks.append(s[:-2]+'aki')
-		nicks.append(s[:-2]+'itsa')
-	else:
-		nicks.append(s[:-1]+'oula')
-		nicks.append(s[:-1]+'aki')
-		nicks.append(s[:-1]+'itsa')
-	return nicks
-	
-def male_nicks(s):  # create male nicknames
-	nicks = []
-	nicks.append(s[:-2]+'aras')
-	nicks.append(s[:-2]+'akhs')
-	nicks.append(s[:-2]+'akos')
-	return nicks
-	
+
+
+
+
 
 def his_birth():    # create a list with dates of births
 	while True:
@@ -252,7 +229,7 @@ def telephone():
 			print info
 		else:
 			telephones.append(tel)
-			
+
 
 def interests():
 	print "\n[+] additional keywords - (place of birth, favorite band or director any keyword you think useful)"
@@ -262,7 +239,7 @@ def interests():
 			break
 		elif interest == "help":
 			print info
-		else: 
+		else:
 			interestslist.append(interest)
 
 
@@ -332,7 +309,7 @@ def team_combine():
 			print info
 		else:
 			print "\nError: That wasn't in the list of options\nPlease type one of the numbers or 'end' to move on\n"
-	
+
 
 def loadf(x):      # append a list's items to the final list
 	global min_char
@@ -407,7 +384,7 @@ def replace(lst, s1, s2):
 		if s1 in i:
 			lst.append(i.replace(s1, s2))   # if a string in the list contains 's1', swap it for 's2'
 
-	
+
 def dic_rep(lst, dic):
 	for k in dic:
 		replace(lst, str(k), str(dic[k]))
@@ -444,7 +421,7 @@ interestslist = []
 namesbirthdates = []
 namestelephones = []
 namesyears = []
-namessequences = []   
+namessequences = []
 namesteams = []
 namesteams_final = []
 namesteams_dates = []
@@ -469,7 +446,7 @@ rev(birthdates)
 add_(birthdates)
 loadf(birthdates)
 
-telephone() 
+telephone()
 rev(telephones)
 add_(telephones)
 loadf(telephones)
@@ -493,5 +470,3 @@ spec_chars()
 
 paswd_list = "\n".join(final_list)	# Getting the list together
 write_out(paswd_list)
-
-
