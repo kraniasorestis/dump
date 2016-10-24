@@ -24,3 +24,9 @@ def male_nicks(s):  # create male nicknames
 	nicks.append(s[:-2]+'akhs')
 	nicks.append(s[:-2]+'akos')
 	return nicks
+
+def list_nicks(l): # returns a list of names appended with nicknames
+	nicks = []
+	for i in l:
+		nicks = nicks + nickname(i)
+	return nicks
