@@ -7,7 +7,7 @@ cupp clone program, taylored specifically for penetration testing in greece
 * kraniasorestis@protonmail.com
 * www.github.com/kraniasorestis
 * Copyright (C) 2016
-* Contributor by Panagiotis Simakis - https://github.com/sp1thas
+* Contributor: Panagiotis Simakis - https://github.com/sp1thas
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
