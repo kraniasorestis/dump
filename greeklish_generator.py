@@ -1,7 +1,6 @@
-#!/bin/pyhton
+#!/bin/python
 
-import time
-
+from src import Nicks, Setup, RestFunctions, AuxFunctions
 intro = '''
 
 ########################   GREEKLISH WORDLIST GENERATOR ############################
@@ -20,7 +19,7 @@ GNU General Public License for more details.
 
  see <http://www.gnu.org/licenses/>
 
-* Creator: Orestis Kranias  
+* Creator: Orestis Kranias
 * kraniasorestis@protonmail.com
 * www.github.com/kraniasorestis
 * Copyright (C) 2016
@@ -35,8 +34,8 @@ Ta dipla fwnhenta kanonika. ei, oi, ai, kai oxi 'i' kai 'e'.
 ALLIWS DEN THA VGOYN OLOI OI DYNATOI SYNDYASMOI KWDIKWN!
 
 
-DISCLAIMER: If you do anything illegal with this program, you could 
-end up in JAIL! I have no responsibility over how this will be used! 
+DISCLAIMER: If you do anything illegal with this program, you could
+end up in JAIL! I have no responsibility over how this will be used!
 It's developed for penetration testers and security researchers!!
 Not for wardriving!!
 
@@ -52,17 +51,17 @@ info = '''
 
 About this project
 
-This is a personalised greeklish dictionary creator, desingned for penetration 
-testing within Greece - but it can obviously be altered for use in other languages. 
+This is a personalised greeklish dictionary creator, desingned for penetration
+testing within Greece - but it can obviously be altered for use in other languages.
 It's being developed to fill a gap in dictionary-attacks in Greece
-which fail too often precisely because there is no good greeklish 
+which fail too often precisely because there is no good greeklish
 dictionary similar to rockyou and because tools like cupp do not
 help that much when it comes to Greek.
 
 The premise: if you provide this program with info on your target
-it will generate a wordlist (implementing a 'cupp-like thinking') 
-taylored specifically for your target, with greater chances of success 
-than a usual english dictionary, which is next to useless in Greece. 
+it will generate a wordlist (implementing a 'cupp-like thinking')
+taylored specifically for your target, with greater chances of success
+than a usual english dictionary, which is next to useless in Greece.
 
 I didn't have the time to do any type checking to the input you give, so,
 if you type words where you should be typing telephone numbers etc,
@@ -78,49 +77,31 @@ Good luck!
 ######################## GLOBAL CONSTANTS WE'LL NEED ##############################
 
 
-minchar = 8    # min and max password characters - change this as you like 
+minchar = 8    # min and max password characters - change this as you like
 maxchar = 18
 
 
 
 # these are lists of years and common sequences used in passwords - they will be used in reverse too
-years = [1950,1951,1952,1953,1954,1955,1956,1957,1958,1959,1960,1961,1962,1963,1964,1965,1966,1967,1968,1969,1970,1971,1972,1973,1974,1975,1976,1977,1978,1979,1980,1981,1982,1983,1984,1985,1986,1987,1988,1989,1990,1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020]
-sequences = [123,1234,12345,123456,1234567,12345678,123456789,123456789,135,1357,13579,1357911,135791113,246,2468,246810,24681012,2468101214]
+years = Setup.years()
+sequences = Setup.sequences()
 
 
 # for the greeklish version of leet mode
 
 
-leet_dict = {
-	'a':'@',
-	'w':'o',
-	'o':'0',
-	'gk':'g',
-	'gg':'g',
-	'mp':'b',
-	'nt':'d',
-	'h':'i',
-	'y':'i',
-	'u':'i',
-	'f':'u',
-	'v':'u',
-	'ay':'ef',
-	'ey':'ef',
-	'au':'af',
-	'eu':'ef',
-	'ch':'x'
-}
+leet_dict = Setup.leet_dict()
 
 
-special_characters = ['!', '.', '@', '#', '$', '%']
+special_characters = Setup.SpecChars()
 
 
-olympiakos = ['thrillos', 'gayros', 'olympiakos', 'olympiakara', 'thira', 'gate', 'thrilara']
-panathinaikos = ['panatha', 'panathinaikos', 'thira', 'gate', 'trifili', 'trifilara', 'vazelos', 'vazelos']
-aek = ['original', 'aek', 'original', 'aek', 'aekara', 'thira', 'aekara', 'hanoumi', 'hanoumaki']
-paok =['paok', 'toumpa', 'paoki', 'mpaok', 'paokara', 'mpaokara', 'voulgaros', 'salonika', 'thessaloniki', 'gate4', 'thira4']
-ael = ['alogaki', 'visini', 'larisa', 'larsa', 'trakter', 'ael', 'aelara']
-aris = ['skouliki', 'salonika', 'xarilaou', 'aris', 'arianos' ]
+olympiakos = Setup.Team('OLY')
+panathinaikos = Setup.Team('PAO')
+aek = Setup.Team('AEK')
+paok = Setup.Team('PAOK')
+ael = Setup.Team('AEL')
+aris = Setup.Team('ARIS')
 
 
 ########################### THE FUNCTIONS ##############################
@@ -128,7 +109,7 @@ aris = ['skouliki', 'salonika', 'xarilaou', 'aris', 'arianos' ]
 
 
 def names():        # populates the nameslist
-	global surname 
+	global surname
 	global firstname
 
 	while True:
@@ -137,7 +118,7 @@ def names():        # populates the nameslist
 			print info
 		elif x == "end":
 			pass
-		else: 
+		else:
 			surname = x
 			nameslist.append(surname)
 
@@ -161,44 +142,20 @@ def names():        # populates the nameslist
 			break
 		elif name == "help":
 			print info
-		else: 
+		else:
 			nameslist.append(name)
 
+def add_nums(l):   # add some numbers to a list's elements
+	tmp = []
+	new_l = []
+	for i in range(0, 100):
+		tmp.append(str(i))
+		tmp.append('_'+str(i))
+	for i in range(0, 10):
+		tmp.append('0'+str(i))
+	combine2(l, tmp, new_l)
+	l = new_l
 
-def list_nicks(l): # returns a list of names appended with nicknames
-	nicks = []
-	for i in l:
-		nicks = nicks + nickname(i)
-	return nicks
-	
-def nickname(n):   # use a nickname function for each name based on gender
-	nicks = []
-	if n[-2:] == 'hs' or n[-2:] == 'os' or n[-2:] == 'as':
-		nicks = male_nicks(n)
-	else:
-		nicks = fem_nicks(n)
-	return nicks
-
-
-def fem_nicks(s):  # create female nicknames
-	nicks = []
-	if s[-2:] == 'ia':
-		nicks.append(s[:-2]+'oula')
-		nicks.append(s[:-2]+'aki')
-		nicks.append(s[:-2]+'itsa')
-	else:
-		nicks.append(s[:-1]+'oula')
-		nicks.append(s[:-1]+'aki')
-		nicks.append(s[:-1]+'itsa')
-	return nicks
-	
-def male_nicks(s):  # create male nicknames
-	nicks = []
-	nicks.append(s[:-2]+'aras')
-	nicks.append(s[:-2]+'akhs')
-	nicks.append(s[:-2]+'akos')
-	return nicks
-	
 
 def his_birth():    # create a list with dates of births
 	while True:
@@ -252,7 +209,7 @@ def telephone():
 			print info
 		else:
 			telephones.append(tel)
-			
+
 
 def interests():
 	print "\n[+] additional keywords - (place of birth, favorite band or director any keyword you think useful)"
@@ -262,7 +219,7 @@ def interests():
 			break
 		elif interest == "help":
 			print info
-		else: 
+		else:
 			interestslist.append(interest)
 
 
@@ -332,7 +289,7 @@ def team_combine():
 			print info
 		else:
 			print "\nError: That wasn't in the list of options\nPlease type one of the numbers or 'end' to move on\n"
-	
+
 
 def loadf(x):      # append a list's items to the final list
 	global min_char
@@ -343,50 +300,8 @@ def loadf(x):      # append a list's items to the final list
 
 
 
-def write_out(x):     # final function - creating the file with the wordlist
-	mylist = file('wordlist_%s.txt' % time.strftime('%d-%m-%Y_%H:%M'), 'w')
-	mylist.write(x)
-	mylist.close
-	print "[+] created a wordlist with %d passwords" % len(final_list)
-	raw_input("\n\npress enter to exit")
-	exit()
 
 
-
-# Auxiliary functions   - functions to add some spice
-
-def rev(l): # append a list with the reversed versions of its strings
-	tmp = []
-	for i in l:
-		tmp.append(str(i)[::-1])
-	for i in tmp:
-		l.append(i)
-
-def add_(l):   # add the '_' and '-' characters before the list's strings and reappend them to the list (to be used with years and sequences)
-	tmp = []
-	for i in l:
-		tmp.append('_'+str(i))
-		tmp.append('-'+str(i))
-	for i in tmp:
-		l.append(i)
-
-def add_nums(l):   # add some numbers to a list's elements
-	tmp = []
-	new_l = []
-	for i in range(0, 100):
-		tmp.append(str(i))
-		tmp.append('_'+str(i))
-	for i in range(0, 10):
-		tmp.append('0'+str(i))
-	combine2(l, tmp, new_l)
-	l = new_l
-
-def capitalize(l):    # append the capitalized elements of a list to itself
-	tmp = []
-	for i in l:
-		tmp.append(i.capitalize())
-	for i in tmp:
-		l.append(i)
 
 def spec_chars():     # append a couple of special characters at the end of the passwords
 	names_spec_chars = []
@@ -407,7 +322,7 @@ def replace(lst, s1, s2):
 		if s1 in i:
 			lst.append(i.replace(s1, s2))   # if a string in the list contains 's1', swap it for 's2'
 
-	
+
 def dic_rep(lst, dic):
 	for k in dic:
 		replace(lst, str(k), str(dic[k]))
@@ -420,10 +335,10 @@ def dic_rep(lst, dic):
 
 # first we add the reverse versions of the years and sequences in their lists
 
-rev(years)
-add_(years)
-rev(sequences)
-add_(sequences)
+RestFunctions.rev(years)
+AuxFunctions.add_(years)
+RestFunctions.rev(sequences)
+AuxFunctions.add_(sequences)
 
 print intro
 
@@ -444,7 +359,7 @@ interestslist = []
 namesbirthdates = []
 namestelephones = []
 namesyears = []
-namessequences = []   
+namessequences = []
 namesteams = []
 namesteams_final = []
 namesteams_dates = []
@@ -458,20 +373,20 @@ final_list=[]   # defining the list and min and max characters of its contents
 # Start the action
 
 names()                 # start asking info
-nameslist = nameslist + list_nicks(nameslist) # let's find some nicknames
-capitalize(nameslist)
+nameslist = nameslist + Nicks.list_nicks(nameslist) # let's find some nicknames
+AuxFunctions.capitalize(nameslist)
 nameslist = dic_rep(nameslist, leet_dict)
-rev(nameslist)          # reverse those names
+RestFunctions.rev(nameslist)          # reverse those names
 loadf(nameslist)        # add them to the final list
 
 births()                # ask for some more info
-rev(birthdates)
-add_(birthdates)
+RestFunctions.rev(birthdates)
+AuxFunctions.add_(birthdates)
 loadf(birthdates)
 
-telephone() 
-rev(telephones)
-add_(telephones)
+telephone()
+RestFunctions.rev(telephones)
+AuxFunctions.add_(telephones)
 loadf(telephones)
 
 team_combine()      # bring football to the mix
@@ -479,7 +394,7 @@ team_combine()      # bring football to the mix
 add_nums(nameslist)
 
 interests()             # what other interests we can mix
-add_(interestslist)
+AuxFunctions.add_(interestslist)
 loadf(interestslist)
 
 combine2(nameslist, birthdates, namesbirthdates)    # combine the s**t out of them
@@ -492,6 +407,4 @@ combine2(interestslist, years, interestsyears)
 spec_chars()
 
 paswd_list = "\n".join(final_list)	# Getting the list together
-write_out(paswd_list)
-
-
+RestFunctions.write_out(paswd_list)
