@@ -407,4 +407,4 @@ combine2(interestslist, years, interestsyears)
 spec_chars()
 
 paswd_list = "\n".join(final_list)	# Getting the list together
-RestFunctions.write_out(paswd_list)
+RestFunctions.write_out(paswd_list, final_list)

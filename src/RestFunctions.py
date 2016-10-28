@@ -7,7 +7,7 @@ def rev(l): # append a list with the reversed versions of its strings
 		l.append(i)
 
 
-def write_out(x):     # final function - creating the file with the wordlist
+def write_out(x, final_list):     # final function - creating the file with the wordlist
 	mylist = file('wordlist_%s.txt' % time.strftime('%d-%m-%Y_%H:%M'), 'w')
 	mylist.write(x)
 	mylist.close
