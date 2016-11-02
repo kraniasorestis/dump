@@ -113,19 +113,19 @@ def names():        # populates the nameslist
 	global firstname
 
 	while True:
-		x = raw_input("\n[+] owner's surname - type 'end' if you don't know it > ")
+		x = raw_input("\n[+] owner's surname - press ENTER if you don't know it > ")
 		if x == "help":
 			print info
-		elif x == "end":
+		elif x == "":
 			pass
 		else:
 			surname = x
 			nameslist.append(surname)
 
-		y = raw_input("\n[+] owner's firstname - type 'end' if you don't know it' > ")
+		y = raw_input("\n[+] owner's firstname - press ENTER if you don't know it' > ")
 		if y == "help":
 			print info
-		elif y == "end":
+		elif y == "":
 			break
 		else:
 			firstname = y
@@ -135,10 +135,10 @@ def names():        # populates the nameslist
 				nameslist.append(firstname + surname)
 		break
 
-	print "\n[+] names of partner, child, possible nicknames, relatives, pets or best friends - type 'end' to move on > "
+	print "\n[+] names of partner, child, possible nicknames, relatives, pets or best friends - press ENTER to move on > "
 	while True:
-		name = raw_input("[+] enter a name (or 'end') >  ")
-		if name == "end":
+		name = raw_input("[+] enter a name (or press ENTER) >  ")
+		if name == "":
 			break
 		elif name == "help":
 			print info
@@ -160,8 +160,8 @@ def add_nums(l):   # add some numbers to a list's elements
 def his_birth():    # create a list with dates of births
 	while True:
 		global birthdates
-		x = raw_input("\n[+] target's birthdate in DDMMYYYY format (or 'end' if you don't know)>  ")
-		if x == 'end':
+		x = raw_input("\n[+] target's birthdate in DDMMYYYY format (or press ENTER if you don't know)>  ")
+		if x == '':
 			break
 		elif len(x) == 8:
 			birthdates += (x, x[2:], x[:4], x[:2]+'_'+x[2:4]+'_'+x[4:], x[:2]+'_'+x[2:4]+'_'+x[6:], x[:4]+x[6:], x[:2]+'_'+x[2:4], x[2:4]+'_'+x[4:], x[2:4]+'_'+x[6:])
@@ -172,8 +172,8 @@ def his_birth():    # create a list with dates of births
 def her_birth():
 	while True:
 		global birthdates
-		x = raw_input("\n[+] partner's birthdate in DDMMYYYY format (or 'end' if you don't know)>  ")
-		if x == 'end':
+		x = raw_input("\n[+] partner's birthdate in DDMMYYYY format (or press ENTER if you don't know)>  ")
+		if x == '':
 			break
 		elif len(x) == 8:
 			birthdates += (x, x[2:], x[:4], x[:2]+'_'+x[2:4]+'_'+x[4:], x[:2]+'_'+x[2:4]+'_'+x[6:], x[:4]+x[6:], x[:2]+'_'+x[2:4], x[2:4]+'_'+x[4:], x[2:4]+'_'+x[6:])
@@ -184,8 +184,8 @@ def her_birth():
 def kid_birth():
 	while True:
 		global birthdates
-		x = raw_input("\n[+] child's birthdate in DDMMYYYY format (or 'end' if you don't know)>  ")
-		if x == 'end':
+		x = raw_input("\n[+] child's birthdate in DDMMYYYY format (or press ENTER if you don't know)>  ")
+		if x == '':
 			break
 		elif len(x) == 8:
 			birthdates += (x, x[2:], x[:4], x[:2]+'_'+x[2:4]+'_'+x[4:], x[:2]+'_'+x[2:4]+'_'+x[6:], x[:4]+x[6:], x[:2]+'_'+x[2:4], x[2:4]+'_'+x[4:], x[2:4]+'_'+x[6:])
@@ -202,8 +202,8 @@ def births():
 def telephone():
 	print "\n[+] type his telephone numbers if you know them"
 	while True:
-		tel = raw_input("[+] telephone or 'end' to move on-->  ")
-		if tel == "end":
+		tel = raw_input("[+] telephone or press ENTER to move on-->  ")
+		if tel == "":
 			break
 		elif tel == 'help':
 			print info
@@ -214,8 +214,8 @@ def telephone():
 def interests():
 	print "\n[+] additional keywords - (place of birth, favorite band or director any keyword you think useful)"
 	while True:
-		interest = raw_input("[+] enter an interest (or 'end') >  ")
-		if interest == "end":
+		interest = raw_input("[+] enter an interest (or ENTER) >  ")
+		if interest == "":
 			break
 		elif interest == "help":
 			print info
@@ -243,11 +243,11 @@ def team_combine():
 	4) PAOK
 	5) AEL
 	6) Aris
-	[+] type 'end' if you don't know or if you don't want to use this
+	[+] press ENTER if you don't know or if you don't want to use this
 	'''
 
 	while True:
-		x = raw_input("[+] pick the corresponding number (or 'end') >  ")
+		x = raw_input("[+] pick the corresponding number (or ENTER) >  ")
 		if x == '1':
 			loadf(olympiakos)
 			combine2(nameslist, olympiakos, namesteams)
@@ -283,12 +283,12 @@ def team_combine():
 			combine2(nameslist, aris, namesteams)
 			combine2(namesteams, years, namesteams_dates)
 			break
-		elif x == 'end':
+		elif x == '':
 			break
 		elif x == 'help':
 			print info
 		else:
-			print "\nError: That wasn't in the list of options\nPlease type one of the numbers or 'end' to move on\n"
+			print "\nError: That wasn't in the list of options\nPlease type one of the numbers or press ENTER to move on\n"
 
 
 def loadf(x):      # append a list's items to the final list
@@ -407,4 +407,4 @@ combine2(interestslist, years, interestsyears)
 spec_chars()
 
 paswd_list = "\n".join(final_list)	# Getting the list together
-RestFunctions.write_out(paswd_list)
+RestFunctions.write_out(paswd_list, final_list)
