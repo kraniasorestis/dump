@@ -43,7 +43,7 @@ def Team(TeamLabel):
         'OLY': ['thrillos', 'gayros', 'olympiakos', 'olympiakara', 'thira', 'gate', 'thrilara'],
         'PAO': ['panatha', 'panathinaikos', 'thira', 'gate', 'trifili', 'trifilara', 'vazelos', 'vazelos'],
         'AEK': ['original', 'aek', 'original', 'aek', 'aekara', 'thira', 'aekara', 'hanoumi', 'hanoumaki'],
-        'PAOK': ['paok', 'toumpa', 'paoki', 'mpaok', 'paokara', 'mpaokara', 'voulgaros', 'salonika', 'thessaloniki', 'gate4', 'thira4'],
+        'PAOK': ['paok', 'toumpa', 'paoki', 'mpaok', 'paokara', 'mpaokara', 'voulgaros', 'salonika', 'thessaloniki', 'gate', 'thira'],
         'AEL': ['alogaki', 'visini', 'larisa', 'larsa', 'trakter', 'ael', 'aelara'],
         'ARIS': ['skouliki', 'salonika', 'xarilaou', 'aris', 'arianos' ]
     }
