@@ -1,7 +1,7 @@
-# greeklish-password-generator
+# DUMP
+DUMP stands for Disturbingly Unsafe & Mediocre Passwords 
 
-
-cupp clone program, taylored specifically for penetration testing in greece
+cupp clone program, tailored specifically for penetration testing in greece
 
 * Creator: Orestis Kranias  
 * kraniasorestis@protonmail.com
