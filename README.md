@@ -52,7 +52,7 @@ help that much when it comes to Greek.
 
 If you provide this program with enough info on your target
 it will generate a wordlist (implementing a 'cupp-like thinking') 
-taylored specifically for your target, with greater chances of success 
+tailored specifically for your target, with greater chances of success 
 than a usual english dictionary, which is next to useless in Greece.
 Expect passwords in the hundreds of thousands at the very least.
 
