@@ -1,5 +1,6 @@
 # DUMP
-DUMP stands for DUMP of Unbelievably Mediocre Passwords 
+DUMP is yet another recursive acronym and stands for 
+a DUMP of Unbelievably Mediocre Passwords 
 
 cupp clone program, tailored specifically for penetration testing in greece
 
