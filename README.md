@@ -1,5 +1,5 @@
 # DUMP
-DUMP stands for Disturbingly Unsafe & Mediocre Passwords 
+DUMP stands for DUMP of Unbelievably Mediocre Passwords 
 
 cupp clone program, tailored specifically for penetration testing in greece
 
