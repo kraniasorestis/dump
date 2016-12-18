@@ -3,7 +3,7 @@
 from src import Nicks, Setup, RestFunctions, AuxFunctions
 intro = '''
 
-########################   GREEKLISH WORDLIST GENERATOR ############################
+#################################   DUMP   ###################################
 
 
 
