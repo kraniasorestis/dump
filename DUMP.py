@@ -5,6 +5,13 @@ intro = '''
 
 #################################   DUMP   ###################################
 
+    ____   __   __ __  __ ____
+   |     \|  | |  |  \/  |    \
+   |      |  | |  |      |  __/
+   |      |  \/  /| |\/| | |
+   |_____/ \____/ |_|  |_|_|
+
+******  DUMP of UNBELIEVABLY MEDIOCRE PASSWORDS ******
 
 
 This program is free software: you can redistribute it and/or modify
@@ -39,6 +46,18 @@ DISCLAIMER: If you do anything illegal with this program, you could
 end up in JAIL! I have no responsibility over how this will be used!
 It's developed for penetration testers and security researchers!!
 Not for wardriving!!
+
+
+
+
+    ____   __   __ __  __ ____
+   |     \|  | |  |  \/  |    \
+   |      |  | |  |      |  __/
+   |      |  \/  /| |\/| | |
+   |_____/ \____/ |_|  |_|_|
+
+******  DUMP of UNBELIEVABLY MEDIOCRE PASSWORDS ******
+
 
 
 '''
