@@ -16,7 +16,7 @@ intro = '''
     ########       #######     ####      ####  ####
 
 
-****** a DUMP of UNBELIEVABLY MEDIOCRE PASSWORDS ******
+*************** a DUMP of UNBELIEVABLY MEDIOCRE PASSWORDS *********************
 
 
 This program is free software: you can redistribute it and/or modify
