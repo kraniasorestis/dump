@@ -3,7 +3,7 @@
 from src import Nicks, Setup, RestFunctions, AuxFunctions, NumberFunctions
 intro = '''
 
-#################################   DUMP   ###################################
+#############################################################
 
 
     ########     ####    ####  #####    #####  ########
@@ -16,7 +16,7 @@ intro = '''
     ########       #######     ####      ####  ####
 
 
-*************** a DUMP of UNBELIEVABLY MEDIOCRE PASSWORDS *********************
+######## a DUMP of UNBELIEVABLY MEDIOCRE PASSWORDS #########
 
 
 This program is free software: you can redistribute it and/or modify
@@ -56,6 +56,7 @@ It's developed for penetration testers and security researchers!!
 Not for wardriving!!
 
 
+#############################################################
 
 
     ########     ####    ####  #####    #####  ########
@@ -68,8 +69,7 @@ Not for wardriving!!
     ########       #######     ####      ####  ####
 
 
-****** a DUMP of UNBELIEVABLY MEDIOCRE PASSWORDS ******
-
+######## a DUMP of UNBELIEVABLY MEDIOCRE PASSWORDS #########
 
 
 '''
@@ -158,7 +158,7 @@ def births():    # create a list with variations on dates of birth
 def telephone():
 	print "\n[+] type his telephone numbers if you know them"
 	while True:
-		tel = raw_input("[+] telephone or press ENTER to move on-->  ")
+		tel = raw_input("[+] telephone (or press ENTER to move on) >  ")
 		if tel == "":
 			break
 		else:
