@@ -14,7 +14,8 @@ def years():
 def sequences():
     return  [
                 0,00,000,0000,00000,000000,0000000,00000000,000000000,123,1234,12345,123456,123123,1234567,
-                12345678,123456789,123456789,135,1357,13579,1357911,135791113,246,2468,246810,24681012,2468101214
+                12345678,123456789,123456789,135,1357,13579,1357911,135791113,246,2468,246810,24681012,2468101214,
+                235,2357,235711,23571113,2357111317,112,1123,11235,112358,11235813,1123581321
             ]
 
 def leet_dict():
@@ -57,7 +58,7 @@ def pop_pswd():  # either very common passwords or password elements
     return  [
                 'dragon','iloveyou','love','princess','master','monkey',
                 'qwerty','abcdef','asdf','qazwsx','1qaz2wsx','abc123'
-                'password','login'
+                'password','login','admin'
             ]
 
 ######## PLACEHOLDERS for upcomming features ########
@@ -68,3 +69,6 @@ def pop_pswd():  # either very common passwords or password elements
 
 # def komma():
 #     analogo me thn omada
+
+# def fav_chars
+#     lista agaphmenwn xarakthrwn analoga me tainies/seires pou vlepei
