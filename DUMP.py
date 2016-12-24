@@ -1,78 +1,78 @@
 #!/bin/python
 
 from src import Nicks, Setup, RestFunctions, AuxFunctions, NumberFunctions
-# intro = '''
-#
-# #############################################################
-#
-#
-#     ########     ####    ####  #####    #####  ########
-#     ##########   ####    ####  ######  ######  #########
-#     ###   #####  ####    ####  ##############  ###   ###
-#     ###    ####  ####    ####  #### #### ####  #########
-#     ###    ####  ####    ####  ####  ##  ####  ########
-#     ###   #####  #####  ####   ####      ####  ####
-#     ##########    #########    ####      ####  ####
-#     ########       #######     ####      ####  ####
-#
-#
-# ######## a DUMP of UNBELIEVABLY MEDIOCRE PASSWORDS #########
-#
-#
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or
-# (at your option) any later version.
-#
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU General Public License for more details.
-#
-#  see <http://www.gnu.org/licenses/>
-#
-# * Creator: Orestis Kranias
-# * kraniasorestis@protonmail.com
-# * www.github.com/kraniasorestis
-# * Copyright (C) 2016
-# * Contributor: Panagiwtis Simakis - https://github.com/sp1thas
-#
-#
-# For the Greek users:
-# An thelete na doulepsei swsta to programma na grafete orthografhmena!
-# (opws edw). Gia paradeigma ta kuria onomata me hta sto telos.
-# LATHOS: Orestis. --> SWSTO: Oresths. To wmega to grafoume me "w",
-# tous difthogkous kanonika, dld: mp - oxi b, nt - oxi d, gk - oxi g.
-# Ta dipla fwnhenta kanonika. ei, oi, ai, kai oxi 'i' kai 'e'.
-# ALLIWS DEN THA VGOYN OLOI OI DYNATOI SYNDYASMOI KWDIKWN!
-#
-# Ean thelete na rythmisete posous xarakthres 8a exoun oi telikoi kwdikoi,
-# aytes oi rythmiseis vriskontai sto /src/Setup.py
-# To default einai apo 8 ews 18 (optimized gia wifi attacks).
-#
-# DISCLAIMER: If you do anything illegal with this program, you could
-# end up in JAIL! I have no responsibility over how this will be used!
-# It's developed for penetration testers and security researchers!!
-# Not for wardriving!!
-#
-#
-# #############################################################
-#
-#
-#     ########     ####    ####  #####    #####  ########
-#     ##########   ####    ####  ######  ######  #########
-#     ###   #####  ####    ####  ##############  ###   ###
-#     ###    ####  ####    ####  #### #### ####  #########
-#     ###    ####  ####    ####  ####  ##  ####  ########
-#     ###   #####  #####  ####   ####      ####  ####
-#     ##########    #########    ####      ####  ####
-#     ########       #######     ####      ####  ####
-#
-#
-# ######## a DUMP of UNBELIEVABLY MEDIOCRE PASSWORDS #########
-#
-#
-# '''
+intro = '''
+
+#############################################################
+
+
+    ########     ####    ####  #####    #####  ########
+    ##########   ####    ####  ######  ######  #########
+    ###   #####  ####    ####  ##############  ###   ###
+    ###    ####  ####    ####  #### #### ####  #########
+    ###    ####  ####    ####  ####  ##  ####  ########
+    ###   #####  #####  ####   ####      ####  ####
+    ##########    #########    ####      ####  ####
+    ########       #######     ####      ####  ####
+
+
+######## a DUMP of UNBELIEVABLY MEDIOCRE PASSWORDS #########
+
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+ see <http://www.gnu.org/licenses/>
+
+* Creator: Orestis Kranias
+* kraniasorestis@protonmail.com
+* www.github.com/kraniasorestis
+* Copyright (C) 2016
+* Contributor: Panagiwtis Simakis - https://github.com/sp1thas
+
+
+For the Greek users:
+An thelete na doulepsei swsta to programma na grafete orthografhmena!
+(opws edw). Gia paradeigma ta kuria onomata me hta sto telos.
+LATHOS: Orestis. --> SWSTO: Oresths. To wmega to grafoume me "w",
+tous difthogkous kanonika, dld: mp - oxi b, nt - oxi d, gk - oxi g.
+Ta dipla fwnhenta kanonika. ei, oi, ai, kai oxi 'i' kai 'e'.
+ALLIWS DEN THA VGOYN OLOI OI DYNATOI SYNDYASMOI KWDIKWN!
+
+Ean thelete na rythmisete posous xarakthres 8a exoun oi telikoi kwdikoi,
+aytes oi rythmiseis vriskontai sto /src/Setup.py
+To default einai apo 8 ews 18 (optimized gia wifi attacks).
+
+DISCLAIMER: If you do anything illegal with this program, you could
+end up in JAIL! I have no responsibility over how this will be used!
+It's developed for penetration testers and security researchers!!
+Not for wardriving!!
+
+
+#############################################################
+
+
+    ########     ####    ####  #####    #####  ########
+    ##########   ####    ####  ######  ######  #########
+    ###   #####  ####    ####  ##############  ###   ###
+    ###    ####  ####    ####  #### #### ####  #########
+    ###    ####  ####    ####  ####  ##  ####  ########
+    ###   #####  #####  ####   ####      ####  ####
+    ##########    #########    ####      ####  ####
+    ########       #######     ####      ####  ####
+
+
+######## a DUMP of UNBELIEVABLY MEDIOCRE PASSWORDS #########
+
+
+'''
 
 
 ######################## GLOBAL CONSTANTS WE'LL NEED ##############################
@@ -330,7 +330,7 @@ final_list=[]
 
 # The actual main program
 
-# print intro
+print intro
 
 loadf(sequences)  # append the final list with common passwords, numbers and sequences
 loadf(pop_pswd)
