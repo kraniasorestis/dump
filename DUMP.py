@@ -1,6 +1,6 @@
 #!/bin/python
 
-from src import Nicks, Setup, RestFunctions, AuxFunctions, NumberFunctions
+from src import AskFunctions, Setup, RestFunctions, AuxFunctions, NumberFunctions
 
 intro = '''
 
@@ -73,7 +73,7 @@ Not for wardriving!!
 ######## a DUMP of UNBELIEVABLY MEDIOCRE PASSWORDS #########
 
 
-'''
+'''''
 
 
 ######################## GLOBAL CONSTANTS WE'LL NEED ##############################
@@ -92,12 +92,9 @@ common_nums = NumberFunctions.common_nums()
 
 # for the greeklish version of leet mode
 
-
 leet_dict = Setup.leet_dict()
 
-
 special_characters = Setup.SpecChars()
-
 
 olympiakos = Setup.Team('OLY')
 panathinaikos = Setup.Team('PAO')
@@ -110,80 +107,14 @@ aris = Setup.Team('ARIS')
 ########################### THE FUNCTIONS ##############################
 
 
-
-def names():        # populates the nameslist
-	global surname
-	global firstname
-
-	while True:
-		x = raw_input("\n[+] owner's surname - press ENTER if you don't know it > ")
-		if x == "":
-			pass
-		else:
-			surname = x
-			nameslist.append(surname)
-
-		y = raw_input("\n[+] owner's firstname - press ENTER if you don't know it' > ")
-		if y == "":
-			break
-		else:
-			firstname = y
-			nameslist.append(firstname)
-			nameslist.append(surname + firstname)
-			if surname + firstname != firstname + surname:
-				nameslist.append(firstname + surname)
-		break
-
-	print "\n[+] names of partner, child, possible nicknames, relatives, pets or best friends - press ENTER to move on > "
-	while True:
-		name = raw_input("[+] enter a name (or press ENTER) >  ")
-		if name == "":
-			break
-		else:
-			nameslist.append(name)
-
-
-def births():    # create a list with variations on dates of birth
-	print "\n[+] If you know any birthdates (target's, his/her partner's or kid's) enter them bellow:"
-	while True:
-		global birthdates
-		x = raw_input("[+] enter a relevant birthdate in DDMMYYYY format (or press ENTER to move on)>  ")
-		if x == '':
-			break
-		elif len(x) == 8:
-			birthdates += (x, x[2:], x[:4], x[:2]+'_'+x[2:4]+'_'+x[4:], x[:2]+'_'+x[2:4]+'_'+x[6:], x[:4]+x[6:], x[:2]+'_'+x[2:4], x[2:4]+'_'+x[4:], x[2:4]+'_'+x[6:])
-		else:
-			print "DDMMYYYY requires 8 characters!"
-
-
-def telephone():
-	print "\n[+] type his telephone numbers if you know them"
-	while True:
-		tel = raw_input("[+] telephone (or press ENTER to move on) >  ")
-		if tel == "":
-			break
-		else:
-			telephones.append(tel)
-
-
-def interests():
-	print "\n[+] additional keywords - (place of birth, favorite band, director or any other keyword you think might be useful)"
-	while True:
-		interest = raw_input("[+] enter an interest (or ENTER) >  ")
-		if interest == "":
-			break
-		else:
-			interestslist.append(interest)
-
-
 def combine2 (a, b, new_l):    # Combine the string items of two lists to a new list & add it to the final list
-	n = 0
-	while n < len(a):
-		for i in b:
-			if minchar <= len(str(a[n])+str(i)) and maxchar >= len(str(a[n])+str(i)):
-				new_l.append(str(a[n]) + str(i))
-				final_list.append(str(a[n]) + str(i))
-		n += 1
+    n = 0
+    while n < len(a):
+        for i in b:
+            if minchar <= len(str(a[n])+str(i)) and maxchar >= len(str(a[n])+str(i)):
+                new_l.append(str(a[n]) + str(i))
+                final_list.append(str(a[n]) + str(i))
+        n += 1
 
 
 def team_combine():
@@ -271,27 +202,11 @@ def spec_chars():     # append a couple of special characters at the end of the 
 
 
 
-
-# finally the greeklish version of the leet mode:
-
-
-def replace(lst, s1, s2):
-	for i in lst:
-		if s1 in i:
-			lst.append(i.replace(s1, s2))   # if a string in the list contains 's1', swap it for 's2'
-
-
-def dic_rep(lst, dic):
-	for k in dic:
-		replace(lst, str(k), str(dic[k]))
-	return lst     # do replacing for every pair in a dictionary
-
-
 ########################### MAIN PROGRAM ###############################
 
 # The Preparation:
 
-# first we add the reverse versions of the years, sequences and popular passwords in their lists
+# first we reverse the years, sequences and popular passwords and reappend them in their lists
 
 RestFunctions.rev(years)
 AuxFunctions.add_(years)
@@ -300,17 +215,9 @@ AuxFunctions.add_(sequences)
 RestFunctions.rev(pop_pswd)
 AuxFunctions.add_(pop_pswd)
 
-surname = 'x'   # surname's gonna be important - gotta have a placeholder for that
-firstname = 'x' # same here and bellow
-
 # Predefining some lists to be populated later
 
-nameslist = []
 teamslist = []
-birthdates = []
-telephones =[]
-interestslist = []
-
 
 # predefined combined lists (including reveresed versions of the ingredient lists)
 
@@ -337,19 +244,19 @@ loadf(sequences)  # append the final list with common passwords, numbers and seq
 loadf(pop_pswd)
 loadf(common_nums)
 
-names()                 # start asking info
-nameslist = nameslist + Nicks.list_nicks(nameslist) # let's find some nicknames
+nameslist = AskFunctions.names()                 # start asking info
+nameslist += AskFunctions.list_nicks(nameslist) # let's find some nicknames
 AuxFunctions.capitalize(nameslist)
-nameslist = dic_rep(nameslist, leet_dict)
+nameslist = AuxFunctions.dic_rep(nameslist, leet_dict)
 RestFunctions.rev(nameslist)          # reverse those names
 loadf(nameslist)        # add them to the final list
 
-births()                # ask for some more info
+birthdates = AskFunctions.births()                # ask for some more info
 RestFunctions.rev(birthdates)
 AuxFunctions.add_(birthdates)
 loadf(birthdates)
 
-telephone()
+telephones = AskFunctions.telephone()
 RestFunctions.rev(telephones)
 AuxFunctions.add_(telephones)
 loadf(telephones)
@@ -358,7 +265,7 @@ team_combine()      # bring football to the mix
 
 add_nums(nameslist)
 
-interests()             # what other interests we can mix
+interestslist = AskFunctions.interests()             # what other interests we can mix
 AuxFunctions.add_(interestslist)
 loadf(interestslist)
 

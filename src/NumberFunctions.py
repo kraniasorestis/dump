@@ -3,7 +3,6 @@ from src import Setup
 minchar = Setup.minchar
 maxchar = Setup.maxchar
 
-
 def common_nums():    # populate the final list with common pswrds like 000000000000
 	tmp = []
 	for i in range (minchar, maxchar+1):
@@ -13,4 +12,3 @@ def common_nums():    # populate the final list with common pswrds like 00000000
 		tmp.append('x'*i)
 		tmp.append('X'*i)
 	return tmp
-
