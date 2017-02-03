@@ -1,8 +1,7 @@
 minchar = 8     # minimum and maximum number of characters the final passwords may have - change this however you like
 maxchar = 18
 
-def years():
-    return  [
+years = [
                 1950,1951,1952,1953,1954,1955,1956,1957,1958,1959,1960,1961,
                 1962,1963,1964,1965,1966,1967,1968,1969,1970,1971,1972,1973,
                 1974,1975,1976,1977,1978,1979,1980,1981,1982,1983,1984,1985,

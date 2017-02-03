@@ -1,6 +1,6 @@
 #!/bin/python
 
-from src import AskFunctions, Setup, RestFunctions, AuxFunctions, NumberFunctions
+from src import AskFunctions, Setup, AuxFunctions, AuxFunctions, NumberFunctions
 
 intro = '''
 
@@ -79,13 +79,7 @@ Not for wardriving!!
 ######################## GLOBAL CONSTANTS WE'LL NEED ##############################
 
 
-minchar = Setup.minchar    # min and max password characters - change this as you like
-maxchar = Setup.maxchar
-
-
-
 # these are lists of years and common sequences used in passwords - they will be used in reverse too
-years = Setup.years()
 sequences = Setup.sequences()
 pop_pswd = Setup.pop_pswd()
 common_nums = NumberFunctions.common_nums()
@@ -111,7 +105,7 @@ def combine2 (a, b, new_l):    # Combine the string items of two lists to a new 
     n = 0
     while n < len(a):
         for i in b:
-            if minchar <= len(str(a[n])+str(i)) and maxchar >= len(str(a[n])+str(i)):
+            if Setup.minchar <= len(str(a[n])+str(i)) and Setup.maxchar >= len(str(a[n])+str(i)):
                 new_l.append(str(a[n]) + str(i))
                 final_list.append(str(a[n]) + str(i))
         n += 1
@@ -134,48 +128,46 @@ def team_combine():
 			loadf(olympiakos)
 			combine2(nameslist, olympiakos, namesteams)
 			combine2(namesteams, ['thira7', 'gate7', '7', 'oeo', 'ole'], namesteams_final)
-			combine2(namesteams_final, years, namesteams_dates)
+			combine2(namesteams_final, Setup.years, namesteams_dates)
 			break
 		elif x == '2':
 			loadf(panathinaikos)
 			combine2(nameslist, panathinaikos, namesteams)
 			combine2(namesteams, ['thira13', 'gate13', '13', 'oeo', 'ole'], namesteams_final)
-			combine2(namesteams_final, years, namesteams_dates)
+			combine2(namesteams_final, Setup.years, namesteams_dates)
 			break
 		elif x == '3':
 			loadf(aek)
 			combine2(nameslist, aek, namesteams)
 			combine2(namesteams, ['thira21', 'gate21', '21', 'oeo', 'ole'], namesteams_final)
-			combine2(namesteams_final, years, namesteams_dates)
+			combine2(namesteams_final, Setup.years, namesteams_dates)
 			break
 		elif x == '4':
 			loadf(paok)
 			combine2(nameslist, paok, namesteams)
 			combine2(namesteams, ['thira4', 'gate4', '4', 'oeo', 'ole'], namesteams_final)
-			combine2(namesteams_final, years, namesteams_dates)
+			combine2(namesteams_final, Setup.years, namesteams_dates)
 			break
 		elif x == '5':
 			loadf(ael)
 			combine2(nameslist, ael, namesteams)
 			combine2(namesteams, ['alogaki', 'oeo', 'ole'], namesteams_final)
-			combine2(namesteams_final, years, namesteams_dates)
+			combine2(namesteams_final, Setup.years, namesteams_dates)
 			break
 		elif x == '6':
 			loadf(aris)
 			combine2(nameslist, aris, namesteams)
-			combine2(namesteams, years, namesteams_dates)
+			combine2(namesteams, Setup.years, namesteams_dates)
 			break
 		elif x == '':
 			break
-		elif x == 'help':
-			print info
 		else:
 			print "\nError: That wasn't in the list of options\nType one of the numbers or press ENTER to move on\n"
 
 
 def loadf(lst):      # append a list's items to the final list
 	for i in lst:
-		if minchar <= len(str(i)) and maxchar >= len(str(i)):
+		if Setup.minchar <= len(str(i)) and Setup.maxchar >= len(str(i)):
 			final_list.append(str(i))
 
 
@@ -208,11 +200,11 @@ def spec_chars():     # append a couple of special characters at the end of the 
 
 # first we reverse the years, sequences and popular passwords and reappend them in their lists
 
-RestFunctions.rev(years)
-AuxFunctions.add_(years)
-RestFunctions.rev(sequences)
+AuxFunctions.rev(Setup.years)
+AuxFunctions.add_(Setup.years)
+AuxFunctions.rev(sequences)
 AuxFunctions.add_(sequences)
-RestFunctions.rev(pop_pswd)
+AuxFunctions.rev(pop_pswd)
 AuxFunctions.add_(pop_pswd)
 
 # Predefining some lists to be populated later
@@ -248,16 +240,16 @@ nameslist = AskFunctions.names()                 # start asking info
 nameslist += AskFunctions.list_nicks(nameslist) # let's find some nicknames
 AuxFunctions.capitalize(nameslist)
 nameslist = AuxFunctions.dic_rep(nameslist, leet_dict)
-RestFunctions.rev(nameslist)          # reverse those names
+AuxFunctions.rev(nameslist)          # reverse those names
 loadf(nameslist)        # add them to the final list
 
 birthdates = AskFunctions.births()                # ask for some more info
-RestFunctions.rev(birthdates)
+AuxFunctions.rev(birthdates)
 AuxFunctions.add_(birthdates)
 loadf(birthdates)
 
 telephones = AskFunctions.telephone()
-RestFunctions.rev(telephones)
+AuxFunctions.rev(telephones)
 AuxFunctions.add_(telephones)
 loadf(telephones)
 
@@ -270,13 +262,13 @@ AuxFunctions.add_(interestslist)
 loadf(interestslist)
 
 combine2(nameslist, birthdates, namesbirthdates)    # combine as many lists as possible
-combine2(nameslist, years, namesyears)
+combine2(nameslist, Setup.years, namesyears)
 combine2(nameslist, sequences, namessequences)
 combine2(nameslist, telephones, namestelephones)
 combine2(nameslist, interestslist, namesinterests)
-combine2(interestslist, years, interestsyears)
+combine2(interestslist, Setup.years, interestsyears)
 
 spec_chars()
 
 paswd_list = "\n".join(final_list)	# Getting the list together
-RestFunctions.write_out(paswd_list, final_list)
+AuxFunctions.write_out(paswd_list, final_list)
