@@ -10,15 +10,13 @@ years = [
                 2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020
             ]
 
-def sequences():
-    return  [
+sequences = [
                 0,00,000,0000,00000,000000,0000000,00000000,000000000,123,1234,12345,123456,123123,1234567,
                 12345678,123456789,123456789,135,1357,13579,1357911,135791113,246,2468,246810,24681012,2468101214,
                 235,2357,235711,23571113,2357111317,112,1123,11235,112358,11235813,1123581321
             ]
 
-def leet_dict():
-    return {
+leet_dict = {
             	'a':'@',
             	'w':'o',
             	'o':'0',
@@ -38,23 +36,20 @@ def leet_dict():
             	'ch':'x'
             }
 
-def SpecChars():
-    return ['!', '.', '@', '#', '$', '%', '*']
+SpecChars = ['!', '.', '@', '#', '$', '%', '*']
 
-def Team(TeamLabel):
-    TeamDict = {
-        'OLY': ['thrillos', 'gayros', 'olympiakos', 'olympiakara', 'thira', 'gate', 'thrilara'],
-        'PAO': ['panatha', 'panathinaikos', 'thira', 'gate', 'trifili', 'trifilara', 'vazelos', 'vazelos'],
-        'AEK': ['original', 'aek', 'original', 'aek', 'aekara', 'thira', 'aekara', 'hanoumi', 'hanoumaki'],
-        'PAOK': ['paok', 'toumpa', 'paoki', 'mpaok', 'paokara', 'mpaokara', 'voulgaros', 'salonika', 'thessaloniki', 'gate', 'thira'],
-        'AEL': ['alogaki', 'visini', 'larisa', 'larsa', 'trakter', 'ael', 'aelara'],
-        'ARIS': ['skouliki', 'salonika', 'xarilaou', 'aris', 'arianos' ]
+team_dic = {
+        1: ['thrillos', 'gayros', 'olympiakos', 'olympiakara', 'thira', 'gate', 'thrilara', 'thira7', 'gate7', '7', 'oeo', 'ole'],
+        2: ['panatha', 'panathinaikos', 'thira', 'gate', 'trifili', 'trifilara', 'vazelos', 'vazelos', 'thira13', 'gate13', '13', 'oeo', 'ole'],
+        3: ['original', 'aek', 'original', 'aek', 'aekara', 'thira', 'aekara', 'hanoumi', 'hanoumaki', 'thira21', 'gate21', '21', 'oeo', 'ole'],
+        4: ['paok', 'toumpa', 'paoki', 'mpaok', 'paokara', 'mpaokara', 'voulgaros', 'salonika', 'thessaloniki', 'gate', 'thira', 'thira4', 'gate4', '4', 'oeo', 'ole'],
+        5: ['alogaki', 'visini', 'larisa', 'larsa', 'trakter', 'ael', 'aelara', 'alogaki', 'oeo', 'ole'],
+        6: ['skouliki', 'salonika', 'xarilaou', 'aris', 'arianos' ]
     }
-    return TeamDict[TeamLabel]
 
+soccer_dic = {1: 'OLY', 2: 'PAO', 3:'AEK', 4:'PAOK', 5:'AEL', 6:'ARIS'}
 
-def pop_pswd():  # either very common passwords or password elements
-    return  [
+pop_pswd = [     # either very common passwords or password elements
                 'dragon','iloveyou','love','princess','master','monkey',
                 'qwerty','abcdef','asdf','qazwsx','1qaz2wsx','abc123'
                 'password','login','admin'

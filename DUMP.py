@@ -7,9 +7,9 @@ intro = '''
 #############################################################
 
 
-    ########     ####    ####  #####    #####  ########
+    #########    ####    ####  #####    #####  ########
     ##########   ####    ####  ######  ######  #########
-    ###   #####  ####    ####  ##############  ###   ###
+    ###   #####  ####    ####  ##############  ##(   )##
     ###    ####  ####    ####  #### #### ####  #########
     ###    ####  ####    ####  ####  ##  ####  ########
     ###   #####  #####  ####   ####      ####  ####
@@ -30,7 +30,7 @@ but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
- see <http://www.gnu.org/licenses/>
+see <http://www.gnu.org/licenses/>
 
 * Creator: Orestis Kranias
 * kraniasorestis@protonmail.com
@@ -60,14 +60,14 @@ Not for wardriving!!
 #############################################################
 
 
-    ########     ####    ####  #####    #####  ########
+    #########    ####    ####  #####    #####  ########
     ##########   ####    ####  ######  ######  #########
-    ###   #####  ####    ####  ##############  ###   ###
+    ###   #####  ####    ####  ##############  ##(   )###
     ###    ####  ####    ####  #### #### ####  #########
     ###    ####  ####    ####  ####  ##  ####  ########
     ###   #####  #####  ####   ####      ####  ####
     ##########    #########    ####      ####  ####
-    ########       #######     ####      ####  ####
+    *#######       #######     ####      ####  ####
 
 
 ######## a DUMP of UNBELIEVABLY MEDIOCRE PASSWORDS #########
@@ -75,200 +75,95 @@ Not for wardriving!!
 
 '''''
 
+def soccer_mix(omada):
+    list1 = AuxFunctions.combine2(nameslist, omada)
+    list2 = AuxFunctions.combine2(list1, omada)
+    list3 = AuxFunctions.combine2(list1, Setup.years)
+    list4 = AuxFunctions.combine2(list2, Setup.years)
+    list5 = AuxFunctions.combine2(omada, Setup.years)
+    list6 = AuxFunctions.combine2(omada, birthdates)
+    return omada + list1 + list2 + list3 + list4 + list5 + list6
 
-######################## GLOBAL CONSTANTS WE'LL NEED ##############################
+def soccer():
+    print '''\n\nwhat's his favourite team?\n
+    1) olympiakos
+    2) panathinaikos
+    3) AEK
+    4) PAOK
+    5) AEL
+    6) Aris
+    [+] press ENTER if you don't know or if you don't want to use this
+    '''
 
-
-# these are lists of years and common sequences used in passwords - they will be used in reverse too
-sequences = Setup.sequences()
-pop_pswd = Setup.pop_pswd()
-common_nums = NumberFunctions.common_nums()
-
-# for the greeklish version of leet mode
-
-leet_dict = Setup.leet_dict()
-
-special_characters = Setup.SpecChars()
-
-olympiakos = Setup.Team('OLY')
-panathinaikos = Setup.Team('PAO')
-aek = Setup.Team('AEK')
-paok = Setup.Team('PAOK')
-ael = Setup.Team('AEL')
-aris = Setup.Team('ARIS')
-
-
-########################### THE FUNCTIONS ##############################
-
-
-def combine2 (a, b, new_l):    # Combine the string items of two lists to a new list & add it to the final list
-    n = 0
-    while n < len(a):
-        for i in b:
-            if Setup.minchar <= len(str(a[n])+str(i)) and Setup.maxchar >= len(str(a[n])+str(i)):
-                new_l.append(str(a[n]) + str(i))
-                final_list.append(str(a[n]) + str(i))
-        n += 1
+    while True:
+        x = raw_input("[+] pick the corresponding number (or ENTER) >  ")
+        tmp = []
+        if x == '':
+            break
+        elif int(x) >= 1 and int(x) <= 6:
+            tmp = soccer_mix(Setup.team_dic[int(x)])
+            break
+        else:
+            print "\nError: That wasn't in the list of options\nType one of the numbers or press ENTER to move on\n"
+    return tmp
 
 
-def team_combine():
-	print '''\n\nwhat's his favourite team?\n
-	1) olympiakos
-	2) panathinaikos
-	3) AEK
-	4) PAOK
-	5) AEL
-	6) Aris
-	[+] press ENTER if you don't know or if you don't want to use this
-	'''
-
-	while True:
-		x = raw_input("[+] pick the corresponding number (or ENTER) >  ")
-		if x == '1':
-			loadf(olympiakos)
-			combine2(nameslist, olympiakos, namesteams)
-			combine2(namesteams, ['thira7', 'gate7', '7', 'oeo', 'ole'], namesteams_final)
-			combine2(namesteams_final, Setup.years, namesteams_dates)
-			break
-		elif x == '2':
-			loadf(panathinaikos)
-			combine2(nameslist, panathinaikos, namesteams)
-			combine2(namesteams, ['thira13', 'gate13', '13', 'oeo', 'ole'], namesteams_final)
-			combine2(namesteams_final, Setup.years, namesteams_dates)
-			break
-		elif x == '3':
-			loadf(aek)
-			combine2(nameslist, aek, namesteams)
-			combine2(namesteams, ['thira21', 'gate21', '21', 'oeo', 'ole'], namesteams_final)
-			combine2(namesteams_final, Setup.years, namesteams_dates)
-			break
-		elif x == '4':
-			loadf(paok)
-			combine2(nameslist, paok, namesteams)
-			combine2(namesteams, ['thira4', 'gate4', '4', 'oeo', 'ole'], namesteams_final)
-			combine2(namesteams_final, Setup.years, namesteams_dates)
-			break
-		elif x == '5':
-			loadf(ael)
-			combine2(nameslist, ael, namesteams)
-			combine2(namesteams, ['alogaki', 'oeo', 'ole'], namesteams_final)
-			combine2(namesteams_final, Setup.years, namesteams_dates)
-			break
-		elif x == '6':
-			loadf(aris)
-			combine2(nameslist, aris, namesteams)
-			combine2(namesteams, Setup.years, namesteams_dates)
-			break
-		elif x == '':
-			break
-		else:
-			print "\nError: That wasn't in the list of options\nType one of the numbers or press ENTER to move on\n"
-
-
-def loadf(lst):      # append a list's items to the final list
-	for i in lst:
-		if Setup.minchar <= len(str(i)) and Setup.maxchar >= len(str(i)):
-			final_list.append(str(i))
-
-
-
-def add_nums(l):   # add some numbers to the back a list's elements
-	tmp = []
-	new_l = []
-	for i in range(0, 100):
-		tmp.append(str(i))
-		tmp.append('_'+str(i))
-	for i in range(0, 10):
-		tmp.append('0'+str(i))
-	combine2(l, tmp, new_l)
-	l = new_l
-
-
-def spec_chars():     # append a couple of special characters at the end of the passwords
-	names_spec_chars = []
-	double_spec_chars = []
-	names_spec_chars_final = []
-	combine2(nameslist, special_characters, names_spec_chars)
-	combine2(special_characters, special_characters, double_spec_chars)
-	combine2(nameslist, double_spec_chars, names_spec_chars_final)
-
-
-
-########################### MAIN PROGRAM ###############################
-
-# The Preparation:
 
 # first we reverse the years, sequences and popular passwords and reappend them in their lists
 
 AuxFunctions.rev(Setup.years)
 AuxFunctions.add_(Setup.years)
-AuxFunctions.rev(sequences)
-AuxFunctions.add_(sequences)
-AuxFunctions.rev(pop_pswd)
-AuxFunctions.add_(pop_pswd)
-
-# Predefining some lists to be populated later
-
-teamslist = []
-
-# predefined combined lists (including reveresed versions of the ingredient lists)
-
-namesbirthdates = []
-namestelephones = []
-namesyears = []
-namessequences = []
-namesteams = []
-namesteams_final = []
-namesteams_dates = []
-namesinterests = []
-interestsyears = []
-
-
-
-final_list=[]
-
-
-# The actual main program
+AuxFunctions.rev(Setup.sequences)
+AuxFunctions.add_(Setup.sequences)
+AuxFunctions.rev(Setup.pop_pswd)
+AuxFunctions.add_(Setup.pop_pswd)
 
 print intro
 
-loadf(sequences)  # append the final list with common passwords, numbers and sequences
-loadf(pop_pswd)
-loadf(common_nums)
+final_list = AuxFunctions.load(Setup.sequences)  # append the final list with common passwords, numbers and sequences
+final_list += AuxFunctions.load(Setup.pop_pswd)
+cmn_pswd = NumberFunctions.common_nums()
+final_list += AuxFunctions.load(cmn_pswd)
 
-nameslist = AskFunctions.names()                 # start asking info
-nameslist += AskFunctions.list_nicks(nameslist) # let's find some nicknames
+######################### Asking Personal Info #############################
+
+nameslist = AskFunctions.names()
+nameslist += AskFunctions.list_nicks(nameslist)   # let's find some nicknames
 AuxFunctions.capitalize(nameslist)
-nameslist = AuxFunctions.dic_rep(nameslist, leet_dict)
-AuxFunctions.rev(nameslist)          # reverse those names
-loadf(nameslist)        # add them to the final list
+nameslist = AuxFunctions.dic_rep(nameslist, Setup.leet_dict)
+AuxFunctions.rev(nameslist)                       # reverse those names
+final_list += AuxFunctions.load(nameslist)
 
-birthdates = AskFunctions.births()                # ask for some more info
+birthdates = AskFunctions.births()
 AuxFunctions.rev(birthdates)
 AuxFunctions.add_(birthdates)
-loadf(birthdates)
+final_list += AuxFunctions.load(birthdates)
 
 telephones = AskFunctions.telephone()
 AuxFunctions.rev(telephones)
 AuxFunctions.add_(telephones)
-loadf(telephones)
+final_list += AuxFunctions.load(telephones)
 
-team_combine()      # bring football to the mix
+final_list += soccer()                           # bring soccer to the mix
 
-add_nums(nameslist)
+########################## Working with the Info ###############################
 
-interestslist = AskFunctions.interests()             # what other interests we can mix
+namelist = NumberFunctions.add_nums(nameslist)
+final_list += nameslist
+
+interestslist = AskFunctions.interests()             # see what other interests we can mix
 AuxFunctions.add_(interestslist)
-loadf(interestslist)
+final_list += AuxFunctions.load(interestslist)
 
-combine2(nameslist, birthdates, namesbirthdates)    # combine as many lists as possible
-combine2(nameslist, Setup.years, namesyears)
-combine2(nameslist, sequences, namessequences)
-combine2(nameslist, telephones, namestelephones)
-combine2(nameslist, interestslist, namesinterests)
-combine2(interestslist, Setup.years, interestsyears)
+final_list += AuxFunctions.combine2(nameslist, birthdates)    # combine as many lists as possible
+final_list += AuxFunctions.combine2(nameslist, Setup.years)
+final_list += AuxFunctions.combine2(nameslist, Setup.sequences)
+final_list += AuxFunctions.combine2(nameslist, telephones)
+final_list += AuxFunctions.combine2(nameslist, interestslist)
+final_list += AuxFunctions.combine2(interestslist, Setup.years)
 
-spec_chars()
+final_list += AuxFunctions.spec_chars(nameslist)
+final_list += AuxFunctions.bi_spec_chars(nameslist)
 
-paswd_list = "\n".join(final_list)	# Getting the list together
+paswd_list = "\n".join(final_list)    # Getting the list together
 AuxFunctions.write_out(paswd_list, final_list)

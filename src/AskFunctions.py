@@ -1,3 +1,6 @@
+from AuxFunctions import combine2
+import Setup
+
 def names():        # populates the nameslist
     tmp=[]
     while True:

@@ -2,7 +2,9 @@
 DUMP is a recursive acronym that stands for 
 a DUMP of Unbelievably Mediocre Passwords 
 
-cupp clone program, tailored specifically for penetration testing in greece
+* This is a Python2.7 program so be careful as python3 will return errors.
+
+* cupp clone program, tailored specifically for penetration testing in greece
 
 * Creator: Orestis Kranias  
 * kraniasorestis@protonmail.com
@@ -36,23 +38,23 @@ gk - όχι g. Τα διπλά φωνήεντα επίσης: ei, oi, ai, και
 
 
 DISCLAIMER: If you do anything illegal with this program, you could 
-end up in JAIL! I have no responsibility over how this will be used! 
+end up in JAIL! I have no responsibility over how this program will be used! 
 It's developed for penetration testers and security researchers!!
 Not for wardriving!! Remember: With great power comes great
 responsibility!
 
 
 
-This is a personalised greeklish dictionary creator, desingned for penetration 
-testing within Greece - but it can obviously be altered for use in other languages. 
-It's being developed to fill a gap in dictionary-attacks in Greece
-which fail too often precisely because there is no good greeklish 
-dictionary similar to rockyou and because tools like cupp do not
-help that much when it comes to Greek.
+This is a personalised greeklish dictionary generator, desingned for
+penetration testing within Greece - but it can obviously be altered 
+for use in other languages. It's being developed to fill a gap in 
+dictionary-attacks in Greece which fail too often precisely because 
+there is no good greeklish dictionary similar to rockyou and because 
+tools like cupp do not help that much when it comes to Greek.
 
 If you provide this program with enough info on your target
-it will generate a wordlist (implementing a 'cupp-like thinking') 
-tailored specifically for your target, with greater chances of success 
+it will generate a wordlist (deploying a cupp-like idea), tailored 
+specifically for your target, with greater chances of success 
 than a usual english dictionary, which is next to useless in Greece.
 Expect passwords in the hundreds of thousands at the very least.
 
