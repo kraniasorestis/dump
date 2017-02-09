@@ -1,20 +1,19 @@
 #!/bin/python
 
-from src import AskFunctions, Setup, AuxFunctions, AuxFunctions, NumberFunctions
+from src import Questions, Setup, AuxFunctions, AuxFunctions, NumberFunctions
 
 intro = '''
 
 #############################################################
 
 
-    #########    ####    ####  #####    #####  ########
-    ##########   ####    ####  ######  ######  #########
-    ###   #####  ####    ####  ##############  ##(   )##
-    ###    ####  ####    ####  #### #### ####  #########
-    ###    ####  ####    ####  ####  ##  ####  ########
-    ###   #####  #####  ####   ####      ####  ####
-    ##########    #########    ####      ####  ####
-    ########       #######     ####      ####  ####
+    MMMMMMMM     MMMM    MMMM  MMMMN    NMMMM  MMMMMMMN
+    MMMMMMMMMN   MMMM    MMMM  MMMMMM  MMMMMM  MMMMMMMMN
+    MMM   NMMMM  MMMM    MMMM  MMMMMMMMMMMMMM  MM(   )MMN
+    MMM    MMMM  MMMM    MMMM  MMMM  NN  MMMM  MMMMMMMMM
+    MMM   NMMMM  MMMMN  NMMMM  MMMM      MMMM  MMMMMMM
+    MMMMMMMMND    MMMMMMMMMM   MMMM      MMMM  MMMM
+    MMMMMMMM       MMMMMMMM    MMMM      MMMM  MMMM
 
 
 ######## a DUMP of UNBELIEVABLY MEDIOCRE PASSWORDS #########
@@ -60,14 +59,13 @@ Not for wardriving!!
 #############################################################
 
 
-    #########    ####    ####  #####    #####  ########
-    ##########   ####    ####  ######  ######  #########
-    ###   #####  ####    ####  ##############  ##(   )###
-    ###    ####  ####    ####  #### #### ####  #########
-    ###    ####  ####    ####  ####  ##  ####  ########
-    ###   #####  #####  ####   ####      ####  ####
-    ##########    #########    ####      ####  ####
-    *#######       #######     ####      ####  ####
+    MMMMMMMM     MMMM    MMMM  MMMMN    NMMMM  MMMMMMMN
+    MMMMMMMMMN   MMMM    MMMM  MMMMMM  MMMMMM  MMMMMMMMN
+    MMM   NMMMM  MMMM    MMMM  MMMMMMMMMMMMMM  MM(   )MMN
+    MMM    MMMM  MMMM    MMMM  MMMM  NN  MMMM  MMMMMMMMM
+    MMM   NMMMM  MMMMN  NMMMM  MMMM      MMMM  MMMMMMM
+    MMMMMMMMND    MMMMMMMMMM   MMMM      MMMM  MMMM
+    MMMMMMMM       MMMMMMMM    MMMM      MMMM  MMMM
 
 
 ######## a DUMP of UNBELIEVABLY MEDIOCRE PASSWORDS #########
@@ -127,19 +125,19 @@ final_list += AuxFunctions.load(cmn_pswd)
 
 ######################### Asking Personal Info #############################
 
-nameslist = AskFunctions.names()
-nameslist += AskFunctions.list_nicks(nameslist)   # let's find some nicknames
+nameslist = Questions.names()
+nameslist += Questions.list_nicks(nameslist)   # let's find some nicknames
 AuxFunctions.capitalize(nameslist)
 nameslist = AuxFunctions.dic_rep(nameslist, Setup.leet_dict)
 AuxFunctions.rev(nameslist)                       # reverse those names
 final_list += AuxFunctions.load(nameslist)
 
-birthdates = AskFunctions.births()
+birthdates = Questions.births()
 AuxFunctions.rev(birthdates)
 AuxFunctions.add_(birthdates)
 final_list += AuxFunctions.load(birthdates)
 
-telephones = AskFunctions.telephone()
+telephones = Questions.telephone()
 AuxFunctions.rev(telephones)
 AuxFunctions.add_(telephones)
 final_list += AuxFunctions.load(telephones)
@@ -151,7 +149,7 @@ final_list += soccer()                           # bring soccer to the mix
 namelist = NumberFunctions.add_nums(nameslist)
 final_list += nameslist
 
-interestslist = AskFunctions.interests()             # see what other interests we can mix
+interestslist = Questions.interests()             # see what other interests we can mix
 AuxFunctions.add_(interestslist)
 final_list += AuxFunctions.load(interestslist)
 

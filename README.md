@@ -40,8 +40,8 @@ gk - όχι g. Τα διπλά φωνήεντα επίσης: ei, oi, ai, και
 DISCLAIMER: If you do anything illegal with this program, you could 
 end up in JAIL! I have no responsibility over how this program will be used! 
 It's developed for penetration testers and security researchers!!
-Not for wardriving!! Remember: With great power comes great
-responsibility!
+Not for breaking into your neightbor's wifi!! Remember: With great 
+power comes great responsibility!
 
 
 
