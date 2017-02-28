@@ -16,8 +16,7 @@ def names():        # populates the nameslist
         else:
             tmp.append(firstname)
             tmp.append(surname + firstname)
-            if surname + firstname != firstname + surname:
-                tmp.append(firstname + surname)
+            tmp.append(firstname + surname)
             break
 
     print "\n[+] names of partner, child, possible nicknames, relatives, pets or best friends - press ENTER to move on > "
@@ -57,7 +56,7 @@ def male_nicks(s):  # create male nicknames
 	nicks.append(s[:-2]+'akos')
 	return nicks
 
-def list_nicks(l): # returns a list of names appended with nicknames
+def nicknames(l): # returns a list of names appended with nicknames
 	nicks = []
 	for i in l:
 		nicks = nicks + nickname(i)

@@ -39,13 +39,16 @@ def bi_spec_chars(l):
 
 def combine2 (a, b):    # return the combinations of 2 lists' items
     tmp = []
-    n = 0
-    while n < len(a):
+    for n in range(len(a)):
         for i in b:
             if Setup.minchar <= len(str(a[n])+str(i)) and Setup.maxchar >= len(str(a[n])+str(i)):
                 tmp.append(str(a[n]) + str(i))
-        n += 1
+    for n in range(len(b)):
+        for i in a:
+            if Setup.minchar <= len(str(b[n])+str(i)) and Setup.maxchar >= len(str(b[n])+str(i)):
+                tmp.append(str(b[n]) + str(i))
     return tmp
+
 
 def one_char_psw():    # provide a list with common pswrds like 00000000
 	tmp = []
@@ -65,7 +68,7 @@ def replace(lst, s1, s2):
         if s1 in i:
             lst.append(i.replace(s1, s2))   # if a string in the list contains 's1', swap it for 's2'
 
-def dic_rep(lst, dic):
+def leet_rep(lst, dic):
     for k in dic:
         replace(lst, str(k), str(dic[k]))
     return lst     # do replacing for every pair in a dictionary
@@ -77,6 +80,6 @@ def write_out(x, final_list):     # final function - creating the file with the 
     mylist = file('wordlist_%s.txt' % time.strftime('%d-%m-%Y_%H:%M'), 'w')
     mylist.write(x)
     mylist.close
-    print "[+] created a wordlist with %d passwords" % len(final_list)
+    print "\n[+] created a wordlist with %d passwords" % len(final_list)
     raw_input("\n\npress enter to exit")
     exit()

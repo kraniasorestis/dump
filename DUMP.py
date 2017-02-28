@@ -41,8 +41,9 @@ see <http://www.gnu.org/licenses/>
 For the Greek users:
 An thelete na doulepsei swsta to programma na grafete orthografhmena!
 (opws edw). Gia paradeigma ta kuria onomata me hta sto telos.
-LATHOS: Orestis. --> SWSTO: Oresths. To wmega to grafoume me "w",
-tous difthogkous kanonika, dld: mp - oxi b, nt - oxi d, gk - oxi g.
+Parola auta, den peirazei an to prwto gramma einai mikro anti gia kefalaio:
+LATHOS: orestis. --> SWSTO: oresths. To wmega to grafoume me "w",
+tous difthogkous kanonika, dld: mp - kai oxi b, nt - oxi d, gk - oxi g.
 Ta dipla fwnhenta kanonika. ei, oi, ai, kai oxi 'i' kai 'e'.
 ALLIWS DEN THA VGOYN OLOI OI DYNATOI SYNDYASMOI KWDIKWN!
 
@@ -83,22 +84,31 @@ def soccer_mix(omada):
     return omada + list1 + list2 + list3 + list4 + list5 + list6
 
 def soccer():
-    print '''\n\nwhat's his favourite team?  -  [!] This will make your wordlist huge [!]\n
-    1) Olympiakos
-    2) Panathinaikos
-    3) AEK
-    4) PAOK
-    5) AEL
-    6) Aris
+    print '''\n\nwhat's his favourite team?
+
+    [!][!][!][!][!][!][!][!][!][!][!][!][!][!][!][!][!][!][!][!][!][!][!][!][!]
+    [!][!][!][!][!][!][!][!]        WARNING      [!][!][!][!][!][!][!][!][!][!]
+    [!][!][!][!][!]  This will make your wordlist so huge [!][!][!][!][!][!][!]
+    [!][!][!][!][!]       that python may even crash      [!][!][!][!][!][!][!]
+    [!][!][!][!]  in case of a crash, retry with fewer names [!][!][!][!][!][!]
+    [!][!][!][!][!][!][!][!][!][!][!][!][!][!][!][!][!][!][!][!][!][!][!][!][!]
+
+       1) Olympiakos
+       2) Panathinaikos
+       3) AEK
+       4) PAOK
+       5) AEL
+       6) Aris
     [+] press ENTER if you don't know or if you don't want to use this
     '''
 
     while True:
-        x = raw_input("[+] pick the corresponding number (or ENTER) >  ")
+        x = raw_input("[+] pick the corresponding number (or ENTER to move on) >  ")
         tmp = []
         if x == '':
             break
         elif int(x) >= 1 and int(x) <= 6:
+            print '\n[!] Wait a couple of mins and pray that your RAM can handle this [!]\n'
             tmp = soccer_mix(Setup.team_dic[int(x)])
             break
         else:
@@ -126,10 +136,10 @@ final_list += Auxiliary.chop(cmn_pswd)
 ######################### Asking Personal Info #############################
 
 nameslist = Questions.names()
-nameslist += Questions.list_nicks(nameslist)   # let's find some nicknames
+nameslist += Questions.nicknames(nameslist)
 Auxiliary.capitalize(nameslist)
-nameslist = Auxiliary.dic_rep(nameslist, Setup.leet_dict)
-Auxiliary.rev(nameslist)                       # reverse those names
+nameslist = Auxiliary.leet_rep(nameslist, Setup.leet_dict)
+Auxiliary.rev(nameslist)
 final_list += Auxiliary.chop(nameslist)
 
 birthdates = Questions.births()
@@ -142,7 +152,7 @@ Auxiliary.rev(telephones)
 Auxiliary.add_(telephones)
 final_list += Auxiliary.chop(telephones)
 
-final_list += soccer()                           # bring soccer to the mix
+final_list += soccer()
 
 ########################## Working with the Info ###############################
 
