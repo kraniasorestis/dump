@@ -1,6 +1,7 @@
 import time, Setup
 
-def load(l):      # appends list A to list B, as long as list's A elements are within a length range
+
+def chop(l):      # returns a list's items that they are within a length range
     tmp = []
     for i in l:
         if Setup.minchar <= len(str(i)) and Setup.maxchar >= len(str(i)):
@@ -29,7 +30,6 @@ def rev(l): # append a list with the reversed versions of its strings
     for i in tmp:
         l.append(i)
 
-
 def spec_chars(l):     # append a couple of special characters at the end of the passwords
     return combine2(l, Setup.SpecChars)
 
@@ -47,6 +47,16 @@ def combine2 (a, b):    # return the combinations of 2 lists' items
         n += 1
     return tmp
 
+def one_char_psw():    # provide a list with common pswrds like 00000000
+	tmp = []
+	for i in range (Setup.minchar, Setup.maxchar+1):
+		tmp.append('1'*i)
+		tmp.append('0'*i)
+		tmp.append(' '*i)
+		tmp.append('x'*i)
+		tmp.append('X'*i)
+        tmp.append('a'*i)
+	return tmp
 
 ############## A leet-like couple of functions for greeklish #########################
 

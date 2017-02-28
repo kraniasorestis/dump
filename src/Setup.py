@@ -47,12 +47,11 @@ team_dic = {
         6: ['skouliki', 'salonika', 'xarilaou', 'aris', 'arianos' ]
     }
 
-soccer_dic = {1: 'OLY', 2: 'PAO', 3:'AEK', 4:'PAOK', 5:'AEL', 6:'ARIS'}
-
-pop_pswd = [     # either very common passwords or password elements
+# either very common passwords or password elements
+pop_pswd = [
                 'dragon','iloveyou','love','princess','master','monkey',
-                'qwerty','abcdef','asdf','qazwsx','1qaz2wsx','abc123'
-                'password','login','admin','root'
+                'qwerty','abcdef','asdf','qazwsx','1qaz2wsx','abc123','qwer',
+                'zxcasd','asdzxc','qweasdzxc','password','login','admin','root'
             ]
 
 ######## PLACEHOLDERS for upcomming features ########

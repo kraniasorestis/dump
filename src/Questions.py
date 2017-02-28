@@ -1,4 +1,4 @@
-from AuxFunctions import combine2
+from Auxiliary import combine2
 import Setup
 
 def names():        # populates the nameslist
