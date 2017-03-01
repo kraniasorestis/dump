@@ -3,11 +3,11 @@
 
 
 # minimum and maximum number of characters the final passwords may have
-minchar = 8
-maxchar = 18
+minchar = 6
+maxchar = 16
 
 # This range of years will be combined with names etc in the passwords
-years = list(range(1950, 2021))
+years = list(range(1980, 2021))
 
 # Same goes for those number sequences
 sequences = [
@@ -52,11 +52,43 @@ team_dic = {
         6: ['skouliki', 'salonika', 'xarilaou', 'aris', 'arianos', 'oeo', 'ole' ]
     }
 
-# Very common passwords & password elements
+# Common passwords derived from the "worst 500 passwords" wordlist hosted in SkullSecurity. I deleted a lot that were just English-only names
+# and I tried to produce the greek counterparts of a lot that could be being used in Greece
 pop_pswd = [
-                'dragon','iloveyou','love','princess','master','monkey',
-                'qwerty','abcdef','asdf','qazwsx','1qaz2wsx','abc123','qwer',
-                'zxcasd','asdzxc','qweasdzxc','password','login','admin','root'
+            'dragon','iloveyou','love','princess','master','monkey', '121212','podosfairo','abgrtyu','dreams',
+            'qwerty','abcdef','asdf','qazwsx','1qaz2wsx','abc123','qwer','zxcasd','asdzxc','qweasdzxc','password',
+            'login','admin','root','paremoumiapipa','arxidi','arxidia','malakas','mpastardos','kargiolhs','kargiolis',
+            'pussy','dragon','696969','mustang','kwdikos','kodikos','letmein','baseball',
+            'master','football','shadow','monkey','abc123','pass','fuckme','6969','jordan','harley','mousikh','tester',
+            'ranger','iwantu','fuck','test','batman','tigger','access','love','buster','olympiakos',
+            'olimpiakos','gayros','panathinaikos','aek','ael','aris','paok','mpasket','basket','hockey','killer','george',
+            'sexy','superman','spiderman','wolverine','cyclops','asshole','fuckyou','summer','hammer','enter','nicole',
+            'cowboy','fucker','corvette','freedom','blowjob','yellow','kitrino','camaro','secret','dick','poutsos','poutsa',
+            '131313','123123','bitch','hello','please','porsche','guitar','chelsea','black','diamond','nascar',
+            'computer','wizard','magos','money','lefta','fragka','iceman','tigers','purple','andrea','horny',
+            'dakota','player','paixths','paixtaras','paixtoura','starwars','boomer','cowboys','charles','girls','gkomenakia','gkomenes',
+            'coffee','kafes','bulldog','john','mpyra','johnny','johnaras','gandalf','winter','brandy','tennis','mike','pipa',
+            'pipes','ferrari','ferari','maverick','diablo','sexsex','hardcore','counterstrike','counter','chris','yamaha','driver',
+            'angels','maddog','butthead','fucking','captain','bigdick','xavier','viking','snoopy','blue','mple','eagles',
+            'winner','house','flower','united','zxcvbn','golf','bond007','tiger','doctor','angel','junior','porno','athens',
+            'thessalonikh','thessaloniki','salonica','patra','larisa','larissa','trikala','karditsa','volos',
+            'hrakleio','xania','krhth','rethymno','thiva','lamia','leivadia','livadia','kozani','kozanh','grevena','ptolemaida','drama','serres',
+            'seres','kavala','alexandroupolh','rodos','xalkida','evoia','katerinh','katerini','sparth','tripolh','badboy','gamwthnpanagia',
+            'spider','1212','porn','matrix','teens','scooby','jason','cumshot','lover','princess','mercedes','doggie','zzzzzz',
+            'horney','2112','fred','xxxxx','tits','member','boobs','bigdaddy','penis','voyager','white','topgun','bigtits','bitches','green','prasino',
+            'portokali','mwv','mob','super','qazwsx','magic','slayer','asdf','video','kwlos','kwlarakia','kwlaraki','skata','marlboro',
+            'internet','action','monster','jeremy','bill','crystal','peter','pussies','cock','beer','rocket','prince','beach','amateur',
+            'star','testing','murphy','mother','forever','angela','viper','lovers','suckit','gregory','nikolas','nikos','paylos',
+            'kwstas','giwrgos','apostolis','giannhs','grhgorhs','grigoris','dhmhtrhs','dimitris','mhtros','mitsos','buddy','filos','kollhtos',
+            'kolitos','kolhth','kolith','whatever','young','nicholas','lucky','helpme','midnight','baby','cunt','startrek','232323','bigcock',
+            'happy','sophie','ladies','naughty','giants','booty','blonde','fucked','golden','fire','sagapw','sagapo','agaph',
+            'fwtia','einstein','warrior','mouni','kayli','kayla','xynw','xysia','xysi','slut','xanthia','xan8ia','nipples','power','victoria','roges',
+            'roga','vizia','vyzia','vizi','vyzi','vagina','toyota','hotdog','gamhsi','gamhsou','gamiese','gamiesai','gamias',
+            'gamaw','segamaw','gamhseme','gamame','rock','extreme','erotic','erwtas','dirty','ford','arsenal','wolf','nipple','alex',
+            'dota','legend','movie','success','jaguar','great','cool','japan','naked','squirt','thalassa','apple','alexis','swimming',
+            'dolphin','kolypmi','casper','stupid','shit','saturn','gemini','apples','august','cumming','kitty','rainbow','112233','cream','shaved',
+            'mine','delfini','king','racing','aetos','eagle','hentai','little','kokkino','cocacola','animal','private','blondes','melaxrines',
+            'enjoy','girl','apollo','qwert','time','metal','women','gynaikes','voodoo','magnum','juice','oneira','music','mistress','phantom',
             ]
 
 ######## PLACEHOLDERS for upcomming features ########

@@ -72,48 +72,12 @@ Not for wardriving!!
 ######## a DUMP of UNBELIEVABLY MEDIOCRE PASSWORDS #########
 
 
+
+[!]  Don't forget to check the Setup.py file to configure   [!]
+[!]      Dump's parameter's to your specific needs          [!]
+
+
 '''''
-
-def soccer_mix(omada):
-    list1 = Auxiliary.combine2(nameslist, omada)
-    list2 = Auxiliary.combine2(list1, omada)
-    list3 = Auxiliary.combine2(list1, Setup.years)
-    list4 = Auxiliary.combine2(list2, Setup.years)
-    list5 = Auxiliary.combine2(omada, Setup.years)
-    list6 = Auxiliary.combine2(omada, birthdates)
-    return omada + list1 + list2 + list3 + list4 + list5 + list6
-
-def soccer():
-    print '''\n\nwhat's his favourite team?
-
-    [!][!][!][!][!][!][!][!][!][!][!][!][!][!][!][!][!][!][!][!][!][!][!][!][!]
-    [!][!][!][!][!][!][!][!]        WARNING      [!][!][!][!][!][!][!][!][!][!]
-    [!][!][!][!][!]  This will make your wordlist so huge [!][!][!][!][!][!][!]
-    [!][!][!][!][!]       that python may even crash      [!][!][!][!][!][!][!]
-    [!][!][!][!]  in case of a crash, retry with fewer names [!][!][!][!][!][!]
-    [!][!][!][!][!][!][!][!][!][!][!][!][!][!][!][!][!][!][!][!][!][!][!][!][!]
-
-       1) Olympiakos
-       2) Panathinaikos
-       3) AEK
-       4) PAOK
-       5) AEL
-       6) Aris
-    [+] press ENTER if you don't know or if you don't want to use this
-    '''
-
-    while True:
-        x = raw_input("[+] pick the corresponding number (or ENTER to move on) >  ")
-        tmp = []
-        if x == '':
-            break
-        elif int(x) >= 1 and int(x) <= 6:
-            print '\n[!] Wait a couple of mins and pray that your RAM can handle this [!]\n'
-            tmp = soccer_mix(Setup.team_dic[int(x)])
-            break
-        else:
-            print "\nError: That wasn't in the list of options\nType one of the numbers or press ENTER to move on\n"
-    return tmp
 
 
 
@@ -123,8 +87,6 @@ Auxiliary.rev(Setup.years)
 Auxiliary.add_(Setup.years)
 Auxiliary.rev(Setup.sequences)
 Auxiliary.add_(Setup.sequences)
-Auxiliary.rev(Setup.pop_pswd)
-Auxiliary.add_(Setup.pop_pswd)
 
 print intro
 
@@ -133,7 +95,7 @@ final_list += Auxiliary.chop(Setup.pop_pswd)
 cmn_pswd = Auxiliary.one_char_psw()
 final_list += Auxiliary.chop(cmn_pswd)
 
-######################### Asking Personal Info #############################
+######################### Collecting Personal Info #############################
 
 nameslist = Questions.names()
 nameslist += Questions.nicknames(nameslist)
@@ -152,18 +114,18 @@ Auxiliary.rev(telephones)
 Auxiliary.add_(telephones)
 final_list += Auxiliary.chop(telephones)
 
-final_list += soccer()
+final_list += Auxiliary.soccer(nameslist, birthdates)
 
 ########################## Working with the Info ###############################
 
 namelist = Numbers.add_nums(nameslist)
 final_list += nameslist
 
-interestslist = Questions.interests()             # see what other interests we can mix
+interestslist = Questions.interests()
 Auxiliary.add_(interestslist)
 final_list += Auxiliary.chop(interestslist)
 
-final_list += Auxiliary.combine2(nameslist, birthdates)    # combine as many lists as possible
+final_list += Auxiliary.combine2(nameslist, birthdates)
 final_list += Auxiliary.combine2(nameslist, Setup.years)
 final_list += Auxiliary.combine2(nameslist, Setup.sequences)
 final_list += Auxiliary.combine2(nameslist, telephones)
@@ -174,5 +136,5 @@ final_list += Auxiliary.spec_chars(nameslist)
 final_list += Auxiliary.bi_spec_chars(nameslist)
 final_list = list(set(final_list))
 
-paswd_list = "\n".join(final_list)    # Getting the list together
+paswd_list = "\n".join(final_list)
 Auxiliary.write_out(paswd_list, final_list)

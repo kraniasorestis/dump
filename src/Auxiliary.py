@@ -50,16 +50,82 @@ def combine2 (a, b):    # return the combinations of 2 lists' items
     return tmp
 
 
+
+def soccer_mix(omada, names, dates):
+    list1 = combine2(names, omada)
+    list2 = combine2(list1, omada)
+    list3 = combine2(list1, Setup.years)
+    list4 = combine2(list2, Setup.years)
+    list5 = combine2(omada, Setup.years)
+    list6 = combine2(omada, dates)
+    return omada + list1 + list2 + list3 + list4 + list5 + list6
+
+def soccer(names, dates):
+    print '''\n\nwhat's his favourite team?
+
+                                       __
+                                      /88&
+                                     /8^^8&
+                                    /88  88&
+                                   /88    88&
+                                  /88      88&
+                                 /88   ##   88&
+                                /88    ##    88&
+                               /88     ##     88&
+                              /88      ##      88&
+                             /88       ##       88&
+                            /88                  88&
+                           /88         ##         88&
+                          /88          ##          88&
+                          YY\ ____________________ /YY
+                           \&&&&&&&&&&&&&&&&&&&&&&&&/
+                                    
+    [!][!][!][!][!][!][!][!][!][!][!][!][!][!][!][!][!][!][!][!][!][!][!][!][!]
+    [!]  Depending on your Setup.py configuration & the input you've given, [!]
+    [!]          this option may make your wordlist so huge                 [!]
+    [!]                   that python may even crash.                       [!]
+    [!]      In case of a memory error, retry with fewer names              [!] 
+    [!]                or cut back on your settings' scope                  [!]
+    [!][!][!][!][!][!][!][!][!][!][!][!][!][!][!][!][!][!][!][!][!][!][!][!][!]
+
+       1) Olympiakos
+       2) Panathinaikos
+       3) AEK
+       4) PAOK
+       5) AEL
+       6) Aris
+
+    [+] press ENTER if you don't know or if you don't want to use this
+    '''
+
+    while True:
+        x = raw_input("[+] pick the corresponding number (or ENTER to move on) >  ")
+        tmp = []
+        if x == '':
+            break
+        elif int(x) >= 1 and int(x) <= 6:
+            print '\n[!] Wait a couple of mins for this to finish... [!]\n'
+            tmp = soccer_mix(Setup.team_dic[int(x)], names, dates)
+            break
+        else:
+            print "\nError: That wasn't in the list of options\nType one of the numbers or press ENTER to move on\n"
+    return tmp
+
+
+
+
 def one_char_psw():    # provide a list with common pswrds like 00000000
-	tmp = []
-	for i in range (Setup.minchar, Setup.maxchar+1):
-		tmp.append('1'*i)
-		tmp.append('0'*i)
-		tmp.append(' '*i)
-		tmp.append('x'*i)
-		tmp.append('X'*i)
+    tmp = []
+    for i in range (Setup.minchar, Setup.maxchar+1):
+        tmp.append('0'*i)
+        tmp.append('1'*i)
+        tmp.append('6'*i)
+        tmp.append(' '*i)
+        tmp.append('x'*i)
+        tmp.append('X'*i)
         tmp.append('a'*i)
-	return tmp
+    return tmp
+
 
 ############## A leet-like couple of functions for greeklish #########################
 
@@ -72,6 +138,7 @@ def leet_rep(lst, dic):
     for k in dic:
         replace(lst, str(k), str(dic[k]))
     return lst     # do replacing for every pair in a dictionary
+
 
 ######################################################################################
 
