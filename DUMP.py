@@ -16,7 +16,7 @@ intro = '''
     MMMMMMMM       NMMMMMMN    MMMM      MMMM  MMMM
 
 
-######## a DUMP of UNBELIEVABLY MEDIOCRE PASSWORDS #########
+######## a DUMP of UNREASONABLY MEDIOCRE PASSWORDS #########
 
 
 This program is free software: you can redistribute it and/or modify
@@ -81,7 +81,7 @@ Not for wardriving!!
 
 
 
-# first we reverse the years, sequences and popular passwords and reappend them in their lists
+# first we reverse the years & sequences and reappend them in their lists
 
 Auxiliary.rev(Setup.years)
 Auxiliary.add_(Setup.years)
@@ -106,13 +106,13 @@ final_list += Auxiliary.chop(nameslist)
 
 birthdates = Questions.births()
 Auxiliary.rev(birthdates)
-Auxiliary.add_(birthdates)
 final_list += Auxiliary.chop(birthdates)
+Auxiliary.add_(birthdates)
 
 telephones = Questions.telephone()
 Auxiliary.rev(telephones)
-Auxiliary.add_(telephones)
 final_list += Auxiliary.chop(telephones)
+Auxiliary.add_(telephones)
 
 final_list += Auxiliary.soccer(nameslist, birthdates)
 

@@ -30,7 +30,7 @@ def rev(l): # append a list with the reversed versions of its strings
     for i in tmp:
         l.append(i)
 
-def spec_chars(l):     # append a couple of special characters at the end of the passwords
+def spec_chars(l):     # append special characters at the end of the passwords
     return combine2(l, Setup.SpecChars)
 
 def bi_spec_chars(l):

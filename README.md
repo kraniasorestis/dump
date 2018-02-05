@@ -1,12 +1,12 @@
 # DUMP
-DUMP is a recursive acronym that stands for 
-a DUMP of Unbelievably Mediocre Passwords 
+
+(a DUMP of Unreasonably Mediocre Passwords) 
 
 * This is a Python2.7 program so be careful as python3 will return errors.
 
-* cupp clone program, tailored specifically for penetration testing in greece
+* A cupp "clone" program, tailored specifically for penetration testing in Greece.
 
-* Creator: Orestis Kranias  
+* Author: Orestis Kranias
 * kraniasorestis@protonmail.com
 * www.github.com/kraniasorestis
 * Copyright (C) 2016
@@ -26,18 +26,21 @@ GNU General Public License for more details.
 
 
 
-For the Greek users:
-Αν θέλετε να δουλέψει σωστά να γράφετε ορθογραφημένα - δηλαδή:
-Τα κύρια ονόματα γράφονται με ήτα και όχι γιώτα. Για παράδειγμα:
-ΛΑΘΟΣ: Orestis. ΣΩΣΤΟ: Oresths. Επίσης, το ωμέγα συμβολίζεται με w,
-όχι με 'ο'. Οι δίφθογκοι γράφονται κανονικά: mp - όχι b, nt - όχι d,
-gk - όχι g. Τα διπλά φωνήεντα επίσης: ei, oi, ai, και όχι 'i' kai 'e'.
-Και πάει λέγοντας. ΑΝ ΔΕΝ ΤΟ ΚΑΝΕΤΕ ΑΥΤΟ ΔΕΝ ΘΑ ΣΑΣ ΔΩΣΕΙ ΟΛΟΥΣ 
-ΤΟΥΣ ΠΙΘΑΝΟΥΣ ΚΩΔΙΚΟΥΣ!
+
+ΟΔΗΓΙΕΣ ΣΩΣΤΗΣ ΧΡΗΣΗΣ
+
+Αν θέλετε να δουλέψει σωστά πρέπει να το χρησιμοποιήσετε "ορθογραφημένα" - δηλαδή:
+Τα κύρια ονόματα σε "-ης" γράφονται με "h" και όχι "i". Για παράδειγμα:
+ΛΑΘΟΣ: Orestis. ΣΩΣΤΟ: Oresths. Επίσης, το ωμέγα να συμβολίζεται με w και
+όχι με 'ο'. Οι δίφθογκοι να γράφονται "κανονικά, δηλαδή "mp" και όχι "b", "nt" - όχι "d",
+"gk" ή "gg" - όχι "g". Τα διπλά φωνήεντα επίσης: ei, oi, ai, και όχι 'i' kai 'e'.
+Και πάει λέγοντας.
 
 
 
-DISCLAIMER: If you do anything illegal with this program, you could 
+DISCLAIMER
+
+If you do anything illegal with this program, you could 
 end up in JAIL! I have no responsibility over how this program will be used! 
 It's developed for penetration testers and security researchers!!
 Not for breaking into your neightbor's wifi!! Remember: With great 
@@ -48,17 +51,17 @@ power comes great responsibility!
 This is a personalised greeklish dictionary generator, desingned for
 penetration testing within Greece - but it can obviously be altered 
 for use in other languages. It's being developed to fill a gap in 
-dictionary-attacks in Greece which fail too often precisely because 
+dictionary attacks in Greece which fail too often precisely because 
 there is no good greeklish dictionary similar to rockyou and because 
 tools like cupp do not help that much when it comes to Greek.
 
 If you provide this program with enough info on your target
 it will generate a wordlist (deploying a cupp-like idea), tailored 
-specifically for your target, with greater chances of success 
+specifically for your target, with a greater chance of success 
 than a usual english dictionary, which is next to useless in Greece.
-Expect passwords in the hundreds of thousands at the very least.
+Expect passwords in the hundreds of thousands or even more.
 
 I didn't have the time to do any type checking to the input you give, so,
 if you type words where you should be typing telephone numbers etc,
-the crappy passwords that will be generated will be on you! :P
+the crappy passwords that will be generated will be your own fault! :P
 

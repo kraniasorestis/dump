@@ -4,13 +4,13 @@ import Setup
 def names():        # populates the nameslist
     tmp=[]
     while True:
-        surname = raw_input("\n[+] owner's surname - press ENTER if you don't know it > ")
+        surname = raw_input("\n[+] target's surname - press ENTER if you don't know it > ")
         if surname == "":
             pass
         else:
             tmp.append(surname)
 
-        firstname = raw_input("\n[+] owner's firstname - press ENTER if you don't know it' > ")
+        firstname = raw_input("\n[+] target's firstname - press ENTER if you don't know it' > ")
         if firstname == "":
             break
         else:
@@ -65,9 +65,9 @@ def nicknames(l): # returns a list of names appended with nicknames
 
 def births():    # create a list with variations on dates of birth
     tmp=[]
-    print "\n[+] If you know any birthdates (target's, his/her partner's or kid's) enter them bellow:"
+    print "\n[+] If you know any birthdates (target's, his/her partner's or kid's) enter them here:"
     while True:
-        x = raw_input("[+] enter a relevant birthdate in DDMMYYYY format (or press ENTER to move on)>  ")
+        x = raw_input("[+] Relevant birthdate in DDMMYYYY format (or press ENTER to move on)>  ")
         if x == '':
             break
         elif len(x) == 8:
@@ -79,9 +79,9 @@ def births():    # create a list with variations on dates of birth
 
 def telephone():
     tmp = []
-    print "\n[+] type his telephone numbers if you know them"
+    print "\n[+] Type his telephone numbers if you know them"
     while True:
-        tel = raw_input("[+] telephone (or press ENTER to move on) >  ")
+        tel = raw_input("[+] Telephone (or press ENTER to move on) >  ")
         if tel == "":
             break
         else:
@@ -91,7 +91,7 @@ def telephone():
 
 def interests():
     tmp = []
-    print "\n[+] additional keywords - (place of birth, favorite band, director or any other keyword you think might be useful)"
+    print "\n[+] Additional keywords - (place of birth, favorite band/director/game or any keyword you think might be useful)"
     while True:
         interest = raw_input("[+] enter an interest (or ENTER) >  ")
         if interest == "":

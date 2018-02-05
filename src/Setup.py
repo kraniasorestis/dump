@@ -7,7 +7,7 @@ minchar = 6
 maxchar = 16
 
 # This range of years will be combined with names etc in the passwords
-years = list(range(1980, 2021))
+years = list(range(1980, 2019))
 
 # Same goes for those number sequences
 sequences = [
@@ -55,26 +55,26 @@ team_dic = {
         1: ['thrillos', 'gayros', 'olympiakos', 'olympiakara', 'thira', 'gate', 'thrilara', 'thira7', 'gate7', '7', 'oeo', 'ole'],
         2: ['panatha', 'panathinaikos', 'thira', 'gate', 'trifili', 'trifilara', 'vazelos', 'vazela', 'thira13', 'gate13', '13', 'oeo', 'ole'],
         3: ['original', 'aek', 'original', 'aek', 'aekara', 'thira', 'aekara', 'hanoumi', 'hanoumaki', 'thira21', 'gate21', '21', 'oeo', 'ole'],
-        4: ['paok', 'toumpa', 'paoki', 'mpaok', 'paokara', 'mpaokara', 'voulgaros', 'salonika', 'thessaloniki', 'gate', 'thira', 'thira4', 'gate4', '4', 'oeo', 'ole'],
+        4: ['paok', 'toumpa', 'paoki', 'mpaok', 'paokara', 'mpaokara', 'voulgaroi', 'salonika', 'thessaloniki', 'gate', 'thira', 'thira4', 'gate4', '4', 'oeo', 'ole'],
         5: ['alogaki', 'visini', 'larisa', 'larsa', 'trakter', 'ael', 'aelara', 'alogaki', 'oeo', 'ole'],
         6: ['skouliki', 'salonika', 'xarilaou', 'aris', 'arianos', 'oeo', 'ole' ]
     }
 
-# Common passwords derived from the "worst 500 passwords" wordlist hosted in SkullSecurity. I deleted a lot that were just English-only names
-# and I tried to produce the greek counterparts of a lot that could be being used in Greece
+# Common passwords derived from the "worst 500 passwords" wordlist hosted in SkullSecurity. 
+# I deleted a lot that were just English-only names.
+# I tried to produce the greek counterparts of a lot that could be being used in Greece
 pop_pswd = [
             'dragon','iloveyou','love','princess','master','monkey', '121212','podosfairo','abgrtyu','dreams',
             'qwerty','abcdef','asdf','qazwsx','1qaz2wsx','abc123','qwer','zxcasd','asdzxc','qweasdzxc','password',
             'login','admin','root','paremoumiapipa','arxidi','arxidia','malakas','mpastardos','kargiolhs','kargiolis',
-            'pussy','dragon','696969','mustang','kwdikos','kodikos','letmein','baseball',
+            'pussy','dragon','696969','mustang','kwdikos','kodikos','letmein','baseball', 'mpala',
             'master','football','shadow','monkey','abc123','pass','fuckme','6969','jordan','harley','mousikh','tester',
             'ranger','iwantu','fuck','test','batman','tigger','access','love','buster','olympiakos',
             'olimpiakos','gayros','panathinaikos','aek','ael','aris','paok','mpasket','basket','hockey','killer','george',
             'sexy','superman','spiderman','wolverine','cyclops','asshole','fuckyou','summer','hammer','enter','nicole',
             'cowboy','fucker','corvette','freedom','blowjob','yellow','kitrino','camaro','secret','dick','poutsos','poutsa',
             '131313','123123','bitch','hello','please','porsche','guitar','chelsea','black','diamond','nascar',
-            'computer','wizard','magos','money','lefta','fragka','iceman','tigers','purple','andrea','horny',
-            'dakota','player','paixths','paixtaras','paixtoura','starwars','boomer','cowboys','charles','girls','gkomenakia','gkomenes',
+            'computer','wizard','magos','money','lefta','fragka','iceman','tigers','purple','andrea','horny', 'dakota','player','paixths','paixtaras','paixtoura','starwars','boomer','cowboys','charles','girls','gkomenakia','gkomenes',
             'coffee','kafes','bulldog','john','mpyra','johnny','johnaras','gandalf','winter','brandy','tennis','mike','pipa',
             'pipes','ferrari','ferari','maverick','diablo','sexsex','hardcore','counterstrike','counter','chris','yamaha','driver',
             'angels','maddog','butthead','fucking','captain','bigdick','xavier','viking','snoopy','blue','mple','eagles',
