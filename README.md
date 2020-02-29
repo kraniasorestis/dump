@@ -27,7 +27,8 @@ GNU General Public License for more details.
 
 
 
-ΟΔΗΓΙΕΣ ΧΡΗΣΗΣ
+
+# ΟΔΗΓΙΕΣ ΧΡΗΣΗΣ
 
 Αν θέλετε να δουλέψει σωστά πρέπει να το χρησιμοποιήσετε "ορθογραφημένα" - δηλαδή:
 
@@ -42,14 +43,18 @@ GNU General Public License for more details.
 πχ dhmhtrhs αντί για Dimitrios
 
 
-DISCLAIMER
+
+
+
+# DISCLAIMER
 
 Αυτό το πρόγραμμα έχει γραφτεί για pen-testing εντός Ελλάδας. Δεν φέρω ευθύνη
 για τυχόν παράνομη χρήση, στην οποία περίπτωση η ευθύνη βαραίνει τον χρήστη.
 
 
 
-ΔΥΟ ΛΟΓΙΑ ΓΙΑ ΤΟ DUMP
+
+# ΔΥΟ ΛΟΓΙΑ ΓΙΑ ΤΟ DUMP
 
 Το πρόγραμμα είναι ένα personalized wordlist generator, το οποίο στην δεύτερη έκδοσή του φέρει:
 
