@@ -1,43 +1,38 @@
 import time, Setup
+import random
 
+def choose_word (wordlist):
+       return random.choice (wordlist)
 
-def chop(l):      # returns a list's items that they are within a length range
+def chop(l):      # returns a list's items that are within a certain length range
     tmp = []
     for i in l:
         if Setup.minchar <= len(str(i)) and Setup.maxchar >= len(str(i)):
             tmp.append(str(i))
     return tmp
 
-def add_(l):   # add the '_' and '-' characters before the list's strings and reappend them to the list (to be used with years and sequences)
+def add_(l):   # add the '_', '-' and '.' characters before the list's strings
     tmp = []
     for i in l:
         tmp.append('_'+str(i))
         tmp.append('-'+str(i))
-    for i in tmp:
-        l.append(i)
+        tmp.append('.'+str(i))
+    return tmp
 
-def capitalize(l):    # append the capitalized elements of a list to itself
+def capitalize(l):    # capitalizes the first letter of every element of a list and reappends them to the list 
     tmp = []
     for i in l:
         tmp.append(i.capitalize())
-    for i in tmp:
-        l.append(i)
+    return tmp
 
 def rev(l): # append a list with the reversed versions of its strings
     tmp = []
     for i in l:
         tmp.append(str(i)[::-1])
-    for i in tmp:
-        l.append(i)
+    return tmp
 
-def spec_chars(l):     # append special characters at the end of the passwords
-    return combine2(l, Setup.SpecChars)
 
-def bi_spec_chars(l):
-    double_spec_chars = combine2(Setup.SpecChars, Setup.SpecChars)
-    return combine2(l, double_spec_chars)
-
-def combine2 (a, b):    # return the combinations of 2 lists' items
+def combine2way (a, b):    # appends list b to a from both front and back
     tmp = []
     for n in range(len(a)):
         for i in b:
@@ -49,44 +44,38 @@ def combine2 (a, b):    # return the combinations of 2 lists' items
                 tmp.append(str(b[n]) + str(i))
     return tmp
 
+def combine (a, b):    # appends list b to to the back of list's a elements, chopped to a character length range
+    tmp = []
+    for n in range(len(a)):
+        for i in b:
+            if Setup.minchar <= len(str(a[n])+str(i)) and Setup.maxchar >= len(str(a[n])+str(i)):
+                tmp.append(str(a[n]) + str(i))
+    return tmp
+
+def combine_front (a, b):    # appends list b to to the back of list's a elements, chopped to a character length range
+    tmp = []
+    for n in range(len(a)):
+        for i in b:
+            if Setup.minchar <= len(str(a[n])+str(i)) and Setup.maxchar >= len(str(a[n])+str(i)):
+                tmp.append(str(i) + str(a[n]))
+    return tmp
+
+
+def spec_chars(l):     # append special characters at the end of list l's items
+    return combine(l, Setup.SpecChars)
 
 
 def soccer_mix(omada, names, dates):
-    list1 = combine2(names, omada)
-    list2 = combine2(list1, omada)
-    list3 = combine2(list1, Setup.years)
-    list4 = combine2(list2, Setup.years)
-    list5 = combine2(omada, Setup.years)
-    list6 = combine2(omada, dates)
+    list1 = combine(names, omada)
+    list2 = combine(list1, omada)
+    list3 = combine(list1, Setup.years)
+    list4 = combine(list2, Setup.years)
+    list5 = combine(omada, Setup.years)
+    list6 = combine(omada, dates)
     return omada + list1 + list2 + list3 + list4 + list5 + list6
 
 def soccer(names, dates):
     print '''\n\nwhat's his favourite team?
-
-                                       __
-                                      /88&
-                                     /8^^8&
-                                    /88  88&
-                                   /88    88&
-                                  /88      88&
-                                 /88   ##   88&
-                                /88    ##    88&
-                               /88     ##     88&
-                              /88      ##      88&
-                             /88       ##       88&
-                            /88                  88&
-                           /88         ##         88&
-                          /88          ##          88&
-                          YY\ ____________________ /YY
-                           \&&&&&&&&&&&&&&&&&&&&&&&&/
-                                    
-    [!][!][!][!][!][!][!][!][!][!][!][!][!][!][!][!][!][!][!][!][!][!][!][!][!]
-    [!]  Depending on your Setup.py configuration & the input you've given, [!]
-    [!]          this option may make your wordlist so huge                 [!]
-    [!]                   that python may even crash.                       [!]
-    [!]      In case of a memory error, retry with fewer names              [!] 
-    [!]                or cut back on your settings' scope                  [!]
-    [!][!][!][!][!][!][!][!][!][!][!][!][!][!][!][!][!][!][!][!][!][!][!][!][!]
 
        1) Olympiakos
        2) Panathinaikos
@@ -104,15 +93,65 @@ def soccer(names, dates):
         if x == '':
             break
         elif int(x) >= 1 and int(x) <= 6:
-            print '\n[!] Wait a couple of mins for this to finish... [!]\n'
             tmp = soccer_mix(Setup.team_dic[int(x)], names, dates)
             break
         else:
             print "\nError: That wasn't in the list of options\nType one of the numbers or press ENTER to move on\n"
     return tmp
 
+def wikipedia_unlink(l):
+    tmp = []
+    for i in l:
+        if i[-3:] == 'rft':
+            tmp.append(i[:-3])
+        else:
+            tmp.append(i)
+    set(tmp)
+    return tmp
+
+def nickname(n):   # create nicknames for each name based on gender
+	nicks = []
+	if n[-2:] == 'hs' or n[-2:] == 'os' or n[-2:] == 'as':
+		nicks = male_nicks(n)
+	else:
+		nicks = fem_nicks(n)
+	return nicks
+
+def fem_nicks(s):  # create female nicknames
+	nicks = []
+	if s[-2:] == 'ia':
+		nicks.append(s[:-2]+'oula')
+		nicks.append(s[:-2]+'aki')
+		nicks.append(s[:-2]+'itsa')
+	else:
+		nicks.append(s[:-1]+'oula')
+		nicks.append(s[:-1]+'aki')
+		nicks.append(s[:-1]+'itsa')
+	return nicks
+
+def male_nicks(s):  # create male nicknames
+    nicks = []
+    nicks.append(s[:-2]+'aras')
+    nicks.append(s[:-2]+'akhs')
+    nicks.append(s[:-2]+'akos')
+    nicks.append(s[:-2]+'oulhs')
+    return nicks
 
 
+def nicknames(l): # returns a list of names appended with nicknames
+	nicks = []
+	for i in l:
+		nicks = nicks + nickname(i)
+	return nicks
+
+def check_nicks(l):
+    tmp = []
+    for i in l:
+        if i in Setup.nic_dic:
+            tmp += Setup.nic_dic.get(i)
+        else:
+            tmp += nickname(i) 
+    return tmp
 
 def one_char_psw():    # provide a list with common pswrds like 00000000
     tmp = []
@@ -124,21 +163,27 @@ def one_char_psw():    # provide a list with common pswrds like 00000000
         tmp.append('x'*i)
         tmp.append('X'*i)
         tmp.append('a'*i)
+        tmp.append('z'*i)
     return tmp
 
 
 ############## A leet-like couple of functions for greeklish #########################
 
-def replace(lst, s1, s2):
-    for i in lst:
+def replace(l, s1, s2):        # if a string in the list contains 's1', swap it for 's2'
+    for i in l:
         if s1 in i:
-            lst.append(i.replace(s1, s2))   # if a string in the list contains 's1', swap it for 's2'
+            l.append(i.replace(s1, s2))   
 
-def leet_rep(lst, dic):
+def leet_rep(l, dic):       # do replacing for every pair in a dictionary
     for k in dic:
-        replace(lst, str(k), str(dic[k]))
-    return lst     # do replacing for every pair in a dictionary
+        replace(l, str(k), str(dic[k]))
+    return l     
 
+def leet(l):
+    tmp = []
+    tmp += leet_rep(l, Setup.leet_dict)
+    tmp += leet_rep(l, Setup.leet_dict_2)
+    return tmp
 
 ######################################################################################
 
@@ -150,3 +195,6 @@ def write_out(x, final_list):     # final function - creating the file with the 
     print "\n[+] created a wordlist with %d passwords" % len(final_list)
     raw_input("\n\npress enter to exit")
     exit()
+
+
+
