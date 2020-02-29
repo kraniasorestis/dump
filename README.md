@@ -27,41 +27,36 @@ GNU General Public License for more details.
 
 
 
-ΟΔΗΓΙΕΣ ΣΩΣΤΗΣ ΧΡΗΣΗΣ
+ΟΔΗΓΙΕΣ ΧΡΗΣΗΣ
 
 Αν θέλετε να δουλέψει σωστά πρέπει να το χρησιμοποιήσετε "ορθογραφημένα" - δηλαδή:
-Τα κύρια ονόματα σε "-ης" γράφονται με "h" και όχι "i". Για παράδειγμα:
-ΛΑΘΟΣ: Orestis. ΣΩΣΤΟ: Oresths. Επίσης, το ωμέγα να συμβολίζεται με w και
-όχι με 'ο'. Οι δίφθογκοι να γράφονται "κανονικά, δηλαδή "mp" και όχι "b", "nt" - όχι "d",
-"gk" ή "gg" - όχι "g". Τα διπλά φωνήεντα επίσης: ei, oi, ai, και όχι 'i' kai 'e'.
-Και πάει λέγοντας.
 
+* Τα ήτα να δίνονται με 'h' και όχι με 'i'. (η ανορθογραφία είναι δουλειά του leet)
+* Tο ωμέγα να συμβολίζεται με 'w' και όχι με 'ο' ktl 
+* Οι δίφθογκοι να γράφονται "κανονικά, δηλαδή "mp" και όχι "b", "nt" - όχι "d",
+"gk" ή "gg" - όχι "g". Τα διπλά φωνήεντα επίσης: ei, oi, ai, και όχι 'i' kai 'e'.
+
+! Tα ονόματα να δίνονται με το πρώτο γράμμα μικρό και την καθημερινή τους μορφή !
+! (το Dump θα συμπεριλάβει την επίσημη μορφή και την μορφή με το κεφαλαίο.)     !
+πχ dhmhtrhs αντί για Dimitrios
 
 
 DISCLAIMER
 
-If you do anything illegal with this program, you could 
-end up in JAIL! I have no responsibility over how this program will be used! 
-It's developed for penetration testers and security researchers!!
-Not for breaking into your neightbor's wifi!! Remember: With great 
-power comes great responsibility!
+Αυτό το πρόγραμμα έχει γραφτεί για pen-testing εντός Ελλάδας. Δεν φέρω ευθύνη
+για τυχόν παράνομη χρήση, στην οποία περίπτωση η ευθύνη βαραίνει τον χρήστη.
 
 
 
-This is a personalised greeklish dictionary generator, desingned for
-penetration testing within Greece - but it can obviously be altered 
-for use in other languages. It's being developed to fill a gap in 
-dictionary attacks in Greece which fail too often precisely because 
-there is no good greeklish dictionary similar to rockyou and because 
-tools like cupp do not help that much when it comes to Greek.
+ΔΥΟ ΛΟΓΙΑ ΓΙΑ ΤΟ DUMP
 
-If you provide this program with enough info on your target
-it will generate a wordlist (deploying a cupp-like idea), tailored 
-specifically for your target, with a greater chance of success 
-than a usual english dictionary, which is next to useless in Greece.
-Expect passwords in the hundreds of thousands or even more.
+Το πρόγραμμα είναι ένα personalized wordlist generator, το οποίο στην δεύτερη έκδοσή του φέρει:
 
-I didn't have the time to do any type checking to the input you give, so,
-if you type words where you should be typing telephone numbers etc,
-the crappy passwords that will be generated will be your own fault! :P
+* Διορθωμένο κώδικα που εξαλείφει το 80% των junk passwords του output της προηγούμενης έκδοσης
+* Πιο εύλογες υποθέσεις για τους συνδυασμούς στοιχείων προς πιθανούς κωδικούς (πιο reasonable passwords)
+* Optional και βελτιωμένο leet mode ( A/4, e/3, v/7/T κτλ)
+* Optional επιλογή ένταξης κοινών bad & vulgar passwords στην wordlist
+* Δραστικά καλύτερο function για υποκοριστικά
+* Δυνατότητα ένταξης επιπλέον wordlists (πχ αποτελέσματα του cewl κτλ) - απλώς ρίχνοντάς τα στον φάκελο additional_wordlists - οι οποίες worldists συνδυάζονται αμέσως με τις χρονολογίες και ενδεχομένως leet mode. 
+
 
