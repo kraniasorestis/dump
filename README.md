@@ -2,9 +2,9 @@
 
 (a DUMP of Unreasonably Mediocre Passwords) 
 
-* This is a Python2.7 program so be careful as python3 will return errors.
+* Το πρόγραμμα είναι γραμμένο για Python2.7
 
-* A cupp "clone" program, tailored specifically for penetration testing in Greece.
+* Εμπνευσμένο από το cupp και σχεδιασμένο για pentesting στην Ελλάδα.
 
 * Author: Orestis Kranias
 * kraniasorestis@protonmail.com
@@ -32,9 +32,10 @@ GNU General Public License for more details.
 Αν θέλετε να δουλέψει σωστά πρέπει να το χρησιμοποιήσετε "ορθογραφημένα" - δηλαδή:
 
 * Τα ήτα να δίνονται με 'h' και όχι με 'i'. (η ανορθογραφία είναι δουλειά του leet)
-* Tο ωμέγα να συμβολίζεται με 'w' και όχι με 'ο' ktl 
+* Tο ωμέγα να συμβολίζεται με 'w' και όχι με 'ο'
 * Οι δίφθογκοι να γράφονται "κανονικά, δηλαδή "mp" και όχι "b", "nt" - όχι "d",
 "gk" ή "gg" - όχι "g". Τα διπλά φωνήεντα επίσης: ei, oi, ai, και όχι 'i' kai 'e'.
+* Λοιποί κανόνες ορθογραφίας-greeklish
 
 ! Tα ονόματα να δίνονται με το πρώτο γράμμα μικρό και την καθημερινή τους μορφή !
 ! (το Dump θα συμπεριλάβει την επίσημη μορφή και την μορφή με το κεφαλαίο.)     !
